@@ -29,7 +29,7 @@
       <span class="logo-sub"><span class="logo-of" lang="en">of McAvoy O’Hara</span></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="주 메뉴">
-      <ul><li><a href="index.html">홈</a></li><li><a href="immediate-assistance.html">즉시 도움</a></li><li><a href="preneed.html" aria-current="page">사전 장례 계약 옵션</a></li><li><a href="index.html#services">서비스</a></li><li><a href="history.html">역사</a></li><li><a href="contact.html">연락처</a></li><li class="nav-lang"><div class="lang-switch" role="group" aria-label="언어"><a href="../preneed.html" lang="en" hreflang="en" data-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="../zh/preneed.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh">中文</a><span class="sep" aria-hidden="true">·</span><a href="../es/preneed.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="../ko/preneed.html" lang="ko" hreflang="ko" data-lang="ko" aria-current="true">한국어</a><span class="sep" aria-hidden="true">·</span><a href="../ru/preneed.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div></li></ul>
+      <ul><li><a href="index.html">홈</a></li><li><a href="immediate-assistance.html">즉시 도움</a></li><li><a href="preneed.html" aria-current="page">사전 장례 계약 옵션</a></li><li><a href="index.html#services">서비스</a></li><li><a href="../obituaries.html">부고</a></li><li><a href="history.html">역사</a></li><li><a href="contact.html">연락처</a></li><li class="nav-lang"><div class="lang-switch" role="group" aria-label="언어"><a href="../preneed.html" lang="en" hreflang="en" data-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="../zh/preneed.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh">中文</a><span class="sep" aria-hidden="true">·</span><a href="../es/preneed.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="../ko/preneed.html" lang="ko" hreflang="ko" data-lang="ko" aria-current="true">한국어</a><span class="sep" aria-hidden="true">·</span><a href="../ru/preneed.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div></li></ul>
     </nav>
     <a class="call-btn" href="tel:+14156680077" aria-label="전화 (415) 668-0077, 24시간 연락 가능">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="call-text"><span class="call-num">(415) 668-0077</span><span class="call-hours">24시간 연락 가능</span></span>
@@ -53,6 +53,31 @@
   </div>
 </section>
 <div class="wrap stack">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="안녕하세요, 사전 계획을 하고 싶습니다. 희망 일시: {date}, {time}. 제 이름:" data-label-days="날짜 선택" data-need-selection="날짜와 시간대를 먼저 선택해 주세요.">
+    <h2 id="plan-ahead-h">미리 준비하세요, 오늘의 가격으로 결제</h2>
+    <div class="rule"></div>
+    <p class="lede plan-ahead-sub">상담 날짜를 선택해 주세요.</p>
+    <div class="plan-ahead-picker">
+      <div class="plan-ahead-days" role="group" aria-label="날짜 선택"></div>
+      <div class="plan-ahead-times" role="group" aria-label="시간대 선택">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="오전" aria-pressed="false">오전</button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="낮" aria-pressed="false">낮</button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="오후" aria-pressed="false">오후</button>
+      </div>
+      <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
+      <p class="plan-ahead-note">신청입니다. 시간을 확인해 드리겠습니다.</p>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">이 시간 신청하기</span></a>
+      <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">전화하시겠어요? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
+    </div>
+    <div class="plan-ahead-fallback">
+      <p>날짜를 정하시려면 전화하거나 문자를 보내 주세요.</p>
+      <div class="btn-row">
+        <a class="btn" href="tel:+14156680077">전화 (415) 668-0077</a>
+        <a class="btn" href="sms:+14156680077?&amp;body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%EC%82%AC%EC%A0%84%20%EA%B3%84%ED%9A%8D%EC%9D%84%20%ED%95%98%EA%B3%A0%20%EC%8B%B6%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%A0%9C%20%EC%9D%B4%EB%A6%84%3A">문자 보내기</a>
+      </div>
+    </div>
+  </section>
+
   <section class="panel reveal" aria-labelledby="why-h">
     <p class="kicker">왜 미리 준비하나요</p>
     <h2 id="why-h">나와 가족 모두의 마음의 평안을 위해</h2>
@@ -97,7 +122,7 @@
     </div>
     <div>
       <div class="footer-h">둘러보기</div>
-      <ul><li><a href="index.html">홈</a></li><li><a href="immediate-assistance.html">즉시 도움</a></li><li><a href="preneed.html">사전 장례 계약 옵션</a></li><li><a href="index.html#services">서비스</a></li><li><a href="history.html">역사</a></li><li><a href="contact.html">연락처</a></li></ul>
+      <ul><li><a href="index.html">홈</a></li><li><a href="immediate-assistance.html">즉시 도움</a></li><li><a href="preneed.html">사전 장례 계약 옵션</a></li><li><a href="index.html#services">서비스</a></li><li><a href="../obituaries.html">부고</a></li><li><a href="history.html">역사</a></li><li><a href="contact.html">연락처</a></li></ul>
     </div>
     <div>
       <div class="footer-h">서비스</div>

@@ -29,7 +29,7 @@
       <span class="logo-sub"><span class="logo-of" lang="en">of McAvoy O’Hara</span><span class="logo-zh">長青殯儀館</span></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="主選單">
-      <ul><li><a href="index.html">首頁</a></li><li><a href="immediate-assistance.html">即時協助</a></li><li><a href="preneed.html" aria-current="page">事前安排方案</a></li><li><a href="index.html#services">服務項目</a></li><li><a href="history.html">我們的歷史</a></li><li><a href="contact.html">聯絡我們</a></li><li class="nav-lang"><div class="lang-switch" role="group" aria-label="語言"><a href="../preneed.html" lang="en" hreflang="en" data-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="../zh/preneed.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh" aria-current="true">中文</a><span class="sep" aria-hidden="true">·</span><a href="../es/preneed.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="../ko/preneed.html" lang="ko" hreflang="ko" data-lang="ko">한국어</a><span class="sep" aria-hidden="true">·</span><a href="../ru/preneed.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div></li></ul>
+      <ul><li><a href="index.html">首頁</a></li><li><a href="immediate-assistance.html">即時協助</a></li><li><a href="preneed.html" aria-current="page">事前安排方案</a></li><li><a href="index.html#services">服務項目</a></li><li><a href="../obituaries.html">訃告</a></li><li><a href="history.html">我們的歷史</a></li><li><a href="contact.html">聯絡我們</a></li><li class="nav-lang"><div class="lang-switch" role="group" aria-label="語言"><a href="../preneed.html" lang="en" hreflang="en" data-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="../zh/preneed.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh" aria-current="true">中文</a><span class="sep" aria-hidden="true">·</span><a href="../es/preneed.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="../ko/preneed.html" lang="ko" hreflang="ko" data-lang="ko">한국어</a><span class="sep" aria-hidden="true">·</span><a href="../ru/preneed.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div></li></ul>
     </nav>
     <a class="call-btn" href="tel:+14156680077" aria-label="致電 (415) 668-0077，24 小時服務">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="call-text"><span class="call-num">(415) 668-0077</span><span class="call-hours">24 小時服務</span></span>
@@ -53,6 +53,31 @@
   </div>
 </section>
 <div class="wrap stack">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="您好，我想預先規劃。希望預約：{date}，{time}。我的姓名：" data-label-days="選擇日期" data-need-selection="請先選擇日期和時段。">
+    <h2 id="plan-ahead-h">預先規劃，按今日價格付款</h2>
+    <div class="rule"></div>
+    <p class="lede plan-ahead-sub">請選擇會面日期。</p>
+    <div class="plan-ahead-picker">
+      <div class="plan-ahead-days" role="group" aria-label="選擇日期"></div>
+      <div class="plan-ahead-times" role="group" aria-label="選擇時段">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="上午" aria-pressed="false">上午</button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="中午" aria-pressed="false">中午</button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="下午" aria-pressed="false">下午</button>
+      </div>
+      <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
+      <p class="plan-ahead-note">這是預約申請。我們會與您確認時間。</p>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">申請此時段</span></a>
+      <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">想致電嗎？ <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
+    </div>
+    <div class="plan-ahead-fallback">
+      <p>請致電或發短訊選擇日期。</p>
+      <div class="btn-row">
+        <a class="btn" href="tel:+14156680077">致電 (415) 668-0077</a>
+        <a class="btn" href="sms:+14156680077?&amp;body=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E9%A0%90%E5%85%88%E8%A6%8F%E5%8A%83%E3%80%82%E6%88%91%E7%9A%84%E5%A7%93%E5%90%8D%EF%BC%9A">發短訊給我們</a>
+      </div>
+    </div>
+  </section>
+
   <section class="panel reveal" aria-labelledby="why-h">
     <p class="kicker">為何預先規劃</p>
     <h2 id="why-h">讓您與家人都安心</h2>
@@ -97,7 +122,7 @@
     </div>
     <div>
       <div class="footer-h">瀏覽</div>
-      <ul><li><a href="index.html">首頁</a></li><li><a href="immediate-assistance.html">即時協助</a></li><li><a href="preneed.html">事前安排方案</a></li><li><a href="index.html#services">服務項目</a></li><li><a href="history.html">我們的歷史</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+      <ul><li><a href="index.html">首頁</a></li><li><a href="immediate-assistance.html">即時協助</a></li><li><a href="preneed.html">事前安排方案</a></li><li><a href="index.html#services">服務項目</a></li><li><a href="../obituaries.html">訃告</a></li><li><a href="history.html">我們的歷史</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
     </div>
     <div>
       <div class="footer-h">服務項目</div>

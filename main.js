@@ -57,3 +57,106 @@
   if(f){ f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.form-msg'); m.classList.add('show'); m.focus(); }); }
   var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
 })();
+
+  // Plan-ahead day picker (pre-need page only)
+  (function(){
+    var box=document.querySelector('[data-plan-ahead]');
+    if(!box) return;
+    var daysBox=box.querySelector('.plan-ahead-days');
+    var timeBtns=[].slice.call(box.querySelectorAll('.plan-ahead-times .plan-choice'));
+    var confirm=box.querySelector('[data-plan-confirm]');
+    var status=box.querySelector('[data-plan-status]');
+    if(!daysBox||!confirm||!timeBtns.length) return;
+
+    var lang=document.documentElement.getAttribute('lang')||'en';
+    var phone=box.getAttribute('data-sms-phone')||'+14156680077';
+    var template=box.getAttribute('data-sms-template')||"Hi, I'd like to plan ahead. Requested: {date}, {time}. My name:";
+    var daysLabel=box.getAttribute('data-label-days')||'Choose a day';
+    var needSel=box.getAttribute('data-need-selection')||'Select a day and a time first.';
+
+    var shortWd, shortMd, longFmt;
+    try{
+      shortWd=new Intl.DateTimeFormat(lang,{weekday:'short'});
+      shortMd=new Intl.DateTimeFormat(lang,{month:'short',day:'numeric'});
+      longFmt=new Intl.DateTimeFormat(lang,{weekday:'long',month:'short',day:'numeric'});
+    }catch(_){
+      shortWd=new Intl.DateTimeFormat('en',{weekday:'short'});
+      shortMd=new Intl.DateTimeFormat('en',{month:'short',day:'numeric'});
+      longFmt=new Intl.DateTimeFormat('en',{weekday:'long',month:'short',day:'numeric'});
+    }
+
+    function ymd(d){
+      var m=d.getMonth()+1, day=d.getDate();
+      return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(day<10?'0':'')+day;
+    }
+    function smsHref(body){ return 'sms:'+phone+'?&body='+encodeURIComponent(body); }
+
+    var today=new Date();
+    today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    daysBox.setAttribute('aria-label',daysLabel);
+    daysBox.textContent='';
+    for(var i=0;i<6;i++){
+      var d=new Date(today.getFullYear(),today.getMonth(),today.getDate()+i);
+      var btn=document.createElement('button');
+      btn.type='button';
+      btn.className='btn plan-choice';
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('data-iso',ymd(d));
+      btn.setAttribute('data-long',longFmt.format(d));
+      btn.setAttribute('aria-label',longFmt.format(d));
+      var lab=document.createElement('span');
+      lab.className='plan-day-label';
+      var wd=document.createElement('span');
+      wd.className='plan-day-wd';
+      wd.textContent=shortWd.format(d);
+      var md=document.createElement('span');
+      md.className='plan-day-md';
+      md.textContent=shortMd.format(d);
+      lab.appendChild(wd);
+      lab.appendChild(md);
+      btn.appendChild(lab);
+      daysBox.appendChild(btn);
+    }
+    var dayBtns=[].slice.call(daysBox.querySelectorAll('.plan-choice'));
+
+    var selectedDay=null, selectedTime=null;
+    function updateConfirm(){
+      if(selectedDay&&selectedTime){
+        var body=template.replace('{date}',selectedDay).replace('{time}',selectedTime);
+        confirm.setAttribute('href',smsHref(body));
+        confirm.setAttribute('aria-disabled','false');
+        if(status) status.textContent=selectedDay+', '+selectedTime;
+      }else{
+        confirm.setAttribute('href','#');
+        confirm.setAttribute('aria-disabled','true');
+      }
+    }
+    function press(group, btn){
+      group.forEach(function(b){ b.setAttribute('aria-pressed', b===btn?'true':'false'); });
+    }
+    dayBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        press(dayBtns,btn);
+        selectedDay=btn.getAttribute('data-long');
+        updateConfirm();
+      });
+    });
+    timeBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        press(timeBtns,btn);
+        selectedTime=btn.getAttribute('data-time-label');
+        updateConfirm();
+      });
+    });
+    confirm.addEventListener('click',function(e){
+      if(confirm.getAttribute('aria-disabled')==='true'){
+        e.preventDefault();
+        if(status) status.textContent=needSel;
+        if(!selectedDay&&dayBtns[0]) dayBtns[0].focus();
+        else if(!selectedTime&&timeBtns[0]) timeBtns[0].focus();
+      }
+    });
+    updateConfirm();
+    box.classList.add('is-ready');
+  })();
+
