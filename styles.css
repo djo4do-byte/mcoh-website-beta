@@ -721,3 +721,40 @@ html[lang="ko"] .plan-ahead-legend,html[lang="zh-Hant"] .plan-ahead-legend{word-
   .plan-ahead .plan-choice:hover,.plan-ahead .plan-choice:focus-visible,
   .plan-ahead-confirm:hover,.plan-ahead-call:hover{transform:none!important}
 }
+
+/* —— Palette refine (append-only, Nov 2026): warmer cream, deeper evergreen type, muted gold accents.
+   Green stays central (Evergreen). Mint button / clickable-card tokens (--mc-fill, --mc-border,
+   --mc-text, arrow circle) are intentionally unchanged. Decorative gold is #b8955a; text gold is
+   the darker #6b4e26 so small labels meet WCAG AAA on cream panels. */
+:root{
+  --cream:#f7f0e4;
+  --ivory:#faf6ef;
+  --warm-white:#fffaf3;
+  --text:#232920;
+  --text-soft:#3a4536;
+  --text-muted:#4f594b;
+  --evergreen:#1a3525;
+  --evergreen-2:#243e2e;
+  --gold:#b8955a;
+  --gold-text:#6b4e26;
+}
+
+/* Page and panel surfaces: a subtle warmer shift (more yellow, less cool green). */
+body{background:#f0eee4}
+.blueprint-bg{background-color:#f0eee4}
+.panel{background:#fffaf3}
+.call-panel{background:linear-gradient(180deg,#fffaf3,#f3eee4)}
+
+/* Headings and body type use the deeper greens above via tokens. Hardcoded home-hero type follows. */
+.home-hero .hero-panel p.tagline{color:var(--evergreen)!important}
+.home-hero .hero-panel p.intro-small{color:#33402f!important}
+
+/* Heritage gold, used sparingly: thin rules/dividers, kicker labels, and a gold top line on
+   the 24-hour phone boxes (.btn.btn-ia on the home hero; .call-panel on Immediate assistance).
+   Inset/top line only — mint fill, mint border, evergreen text, and the white arrow circle stay. */
+.kicker{color:var(--gold-text)}
+.rule{background:var(--gold)}
+.call-panel{box-shadow:0 14px 36px rgba(31,61,43,.13),0 2px 6px rgba(31,61,43,.08),inset 0 3px 0 0 var(--gold)}
+.btn.btn-ia{box-shadow:var(--mc-shadow),inset 0 3px 0 0 var(--gold)}
+.btn.btn-ia:hover,.btn.btn-ia:focus-visible{box-shadow:var(--mc-shadow-hover),inset 0 3px 0 0 var(--gold)}
+.btn.btn-ia:active{box-shadow:var(--mc-shadow-active),inset 0 3px 0 0 var(--gold)}
