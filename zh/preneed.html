@@ -53,26 +53,69 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="您好，我想預先規劃。希望預約：{date}，{time}，{place}。我的姓名：" data-label-days="選擇日期" data-need-selection="請先選擇日期、時段和會面地點。">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="您好，我想預先規劃。希望預約：{date}，{time}，{place}。對象：{who}。時間安排：{timeline}。姓名：{name}。電話：{phone}。" data-label-days="選擇日期" data-need-day="請選擇日期。" data-need-time="請選擇時段。" data-need-place="請選擇會面地點。" data-need-who="請選擇這是為誰安排。" data-need-timeline="請選擇時間安排。" data-need-name="請填寫您的姓名。" data-need-phone="請填寫至少 10 位數字的電話號碼。" data-need-summary="請填妥必填項目。">
     <h2 id="plan-ahead-h">預先規劃，按今日價格付款</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">免費，無須承諾。可在禮堂或以電話會面。</p>
-    <div class="plan-ahead-picker">
-      <div class="plan-ahead-days" role="group" aria-label="選擇日期"></div>
-      <div class="plan-ahead-times" role="group" aria-label="選擇時段">
-        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="上午" aria-pressed="false">上午</button>
-        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="中午" aria-pressed="false">中午</button>
-        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="下午" aria-pressed="false">下午</button>
+    <p class="lede plan-ahead-sub">可在禮堂或以電話會面。</p>
+    <form class="plan-ahead-picker" novalidate>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-day-legend">選擇日期</p>
+        <div class="plan-ahead-days" role="group" aria-labelledby="plan-day-legend">
+        </div>
+        <p class="plan-field-error" data-error-for="day" hidden></p>
       </div>
-      <div class="plan-ahead-places" role="group" aria-label="選擇會面地點">
-        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="在禮堂" aria-pressed="false">禮堂</button>
-        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="以電話" aria-pressed="false">電話</button>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-time-legend">選擇時段</p>
+        <div class="plan-ahead-times" role="group" aria-labelledby="plan-time-legend">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="上午" aria-pressed="false"><span class="plan-choice-label">上午</span></button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="中午" aria-pressed="false"><span class="plan-choice-label">中午</span></button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="下午" aria-pressed="false"><span class="plan-choice-label">下午</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="time" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-place-legend">會面地點</p>
+        <div class="plan-ahead-places" role="group" aria-labelledby="plan-place-legend">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="在禮堂" aria-pressed="false"><span class="plan-choice-label">禮堂</span></button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="以電話" aria-pressed="false"><span class="plan-choice-label">電話</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="place" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-who-legend">這是為誰安排？</p>
+        <div class="plan-ahead-who" role="group" aria-labelledby="plan-who-legend">
+        <button type="button" class="btn plan-choice" data-who="self" data-who-label="我本人" aria-pressed="false"><span class="plan-choice-label">我本人</span></button>
+        <button type="button" class="btn plan-choice" data-who="family" data-who-label="父母或配偶" aria-pressed="false"><span class="plan-choice-label">父母或配偶</span></button>
+        <button type="button" class="btn plan-choice" data-who="info" data-who-label="只是了解資料" aria-pressed="false"><span class="plan-choice-label">只是了解資料</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="who" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-when-legend">時間安排</p>
+        <div class="plan-ahead-when" role="group" aria-labelledby="plan-when-legend">
+        <button type="button" class="btn plan-choice" data-timeline="soon" data-timeline-label="近期（健康考量）" aria-pressed="false"><span class="plan-choice-label">近期（健康考量）</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="year" data-timeline-label="一年內" aria-pressed="false"><span class="plan-choice-label">一年內</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="ahead" data-timeline-label="預先規劃" aria-pressed="false"><span class="plan-choice-label">預先規劃</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="timeline" hidden></p>
+      </div>
+      <div class="plan-ahead-fields">
+        <div class="plan-field">
+          <label for="plan-name">姓名 <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">（必填）</span></label>
+          <input id="plan-name" name="plan-name" type="text" autocomplete="name" required aria-required="true" aria-describedby="plan-name-err">
+          <p class="plan-field-error" id="plan-name-err" data-error-for="name" hidden></p>
+        </div>
+        <div class="plan-field">
+          <label for="plan-phone">電話 <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">（必填）</span></label>
+          <input id="plan-phone" name="plan-phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="plan-phone-err">
+          <p class="plan-field-error" id="plan-phone-err" data-error-for="phone" hidden></p>
+        </div>
       </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
-      <p class="plan-ahead-note">這是預約申請。我們會與您確認時間。</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">預約免費規劃會面</span></a>
+      <p class="plan-ahead-note">第一步是與禮儀顧問進行簡短電話洽談。我們會與您確認時間。</p>
+      <button type="submit" class="btn plan-ahead-confirm" data-plan-confirm><span class="plan-ahead-confirm-label">預約規劃會面</span></button>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">想致電嗎？ <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
-    </div>
+    </form>
     <div class="plan-ahead-fallback">
       <p>請致電或發短訊選擇日期。</p>
       <div class="btn-row">

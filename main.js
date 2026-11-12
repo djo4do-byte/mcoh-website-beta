@@ -62,18 +62,32 @@
   (function(){
     var box=document.querySelector('[data-plan-ahead]');
     if(!box) return;
+    var form=box.querySelector('.plan-ahead-picker');
     var daysBox=box.querySelector('.plan-ahead-days');
     var timeBtns=[].slice.call(box.querySelectorAll('.plan-ahead-times .plan-choice'));
     var placeBtns=[].slice.call(box.querySelectorAll('.plan-ahead-places .plan-choice'));
+    var whoBtns=[].slice.call(box.querySelectorAll('.plan-ahead-who .plan-choice'));
+    var whenBtns=[].slice.call(box.querySelectorAll('.plan-ahead-when .plan-choice'));
     var confirm=box.querySelector('[data-plan-confirm]');
     var status=box.querySelector('[data-plan-status]');
-    if(!daysBox||!confirm||!timeBtns.length||!placeBtns.length) return;
+    var nameInput=box.querySelector('#plan-name');
+    var phoneInput=box.querySelector('#plan-phone');
+    if(!form||!daysBox||!confirm||!timeBtns.length||!placeBtns.length||!whoBtns.length||!whenBtns.length||!nameInput||!phoneInput) return;
 
     var lang=document.documentElement.getAttribute('lang')||'en';
-    var phone=box.getAttribute('data-sms-phone')||'+14156680077';
-    var template=box.getAttribute('data-sms-template')||"Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. My name:";
+    var dest=box.getAttribute('data-sms-phone')||'+14156680077';
+    var template=box.getAttribute('data-sms-template')||"Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. Who it's for: {who}. Timeline: {timeline}. Name: {name}. Phone: {phone}.";
     var daysLabel=box.getAttribute('data-label-days')||'Choose a day';
-    var needSel=box.getAttribute('data-need-selection')||'Select a day, a time, and where to meet first.';
+    var msg={
+      day:box.getAttribute('data-need-day')||'Please choose a day.',
+      time:box.getAttribute('data-need-time')||'Please choose a time.',
+      place:box.getAttribute('data-need-place')||'Please choose where to meet.',
+      who:box.getAttribute('data-need-who')||'Please choose who this is for.',
+      when:box.getAttribute('data-need-timeline')||'Please choose a timeline.',
+      name:box.getAttribute('data-need-name')||'Please enter your name.',
+      phone:box.getAttribute('data-need-phone')||'Please enter a phone number with at least 10 digits.',
+      summary:box.getAttribute('data-need-summary')||'Please complete the required fields.'
+    };
 
     var shortWd, shortMd, longFmt;
     try{
@@ -90,7 +104,28 @@
       var m=d.getMonth()+1, day=d.getDate();
       return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(day<10?'0':'')+day;
     }
-    function smsHref(body){ return 'sms:'+phone+'?&body='+encodeURIComponent(body); }
+    function smsHref(body){ return 'sms:'+dest+'?&body='+encodeURIComponent(body); }
+    function fill(tpl, map){
+      return tpl.replace(/\{(date|time|place|who|timeline|name|phone)\}/g,function(_,k){ return map[k]||''; });
+    }
+    function errEl(key){ return box.querySelector('[data-error-for="'+key+'"]'); }
+    function showErr(key, text){
+      var el=errEl(key);
+      if(!el) return;
+      el.hidden=false;
+      el.textContent=text;
+    }
+    function hideErr(key){
+      var el=errEl(key);
+      if(!el) return;
+      el.hidden=true;
+      el.textContent='';
+    }
+    function setInvalid(el, on){
+      if(!el) return;
+      if(on) el.setAttribute('aria-invalid','true');
+      else el.removeAttribute('aria-invalid');
+    }
 
     var today=new Date();
     today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
@@ -120,52 +155,74 @@
     }
     var dayBtns=[].slice.call(daysBox.querySelectorAll('.plan-choice'));
 
-    var selectedDay=null, selectedTime=null, selectedPlace=null;
-    function updateConfirm(){
-      if(selectedDay&&selectedTime&&selectedPlace){
-        var body=template.replace('{date}',selectedDay).replace('{time}',selectedTime).replace('{place}',selectedPlace);
-        confirm.setAttribute('href',smsHref(body));
-        confirm.setAttribute('aria-disabled','false');
-        if(status) status.textContent=selectedDay+', '+selectedTime+', '+selectedPlace;
-      }else{
-        confirm.setAttribute('href','#');
-        confirm.setAttribute('aria-disabled','true');
-      }
-    }
+    var selectedDay=null, selectedTime=null, selectedPlace=null, selectedWho=null, selectedWhen=null;
+
     function press(group, btn){
       group.forEach(function(b){ b.setAttribute('aria-pressed', b===btn?'true':'false'); });
     }
-    dayBtns.forEach(function(btn){
-      btn.addEventListener('click',function(){
-        press(dayBtns,btn);
-        selectedDay=btn.getAttribute('data-long');
-        updateConfirm();
+    function bindGroup(btns, attr, setter, errKey){
+      btns.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          press(btns,btn);
+          setter(btn.getAttribute(attr));
+          hideErr(errKey);
+        });
       });
+    }
+    bindGroup(dayBtns,'data-long',function(v){ selectedDay=v; },'day');
+    bindGroup(timeBtns,'data-time-label',function(v){ selectedTime=v; },'time');
+    bindGroup(placeBtns,'data-place-label',function(v){ selectedPlace=v; },'place');
+    bindGroup(whoBtns,'data-who-label',function(v){ selectedWho=v; },'who');
+    bindGroup(whenBtns,'data-timeline-label',function(v){ selectedWhen=v; },'timeline');
+
+    nameInput.addEventListener('input',function(){
+      if(nameInput.value.trim()){ hideErr('name'); setInvalid(nameInput,false); }
     });
-    timeBtns.forEach(function(btn){
-      btn.addEventListener('click',function(){
-        press(timeBtns,btn);
-        selectedTime=btn.getAttribute('data-time-label');
-        updateConfirm();
-      });
+    phoneInput.addEventListener('input',function(){
+      if((phoneInput.value.replace(/\D/g,'')||'').length>=10){ hideErr('phone'); setInvalid(phoneInput,false); }
     });
-    placeBtns.forEach(function(btn){
-      btn.addEventListener('click',function(){
-        press(placeBtns,btn);
-        selectedPlace=btn.getAttribute('data-place-label');
-        updateConfirm();
-      });
-    });
-    confirm.addEventListener('click',function(e){
-      if(confirm.getAttribute('aria-disabled')==='true'){
-        e.preventDefault();
-        if(status) status.textContent=needSel;
-        if(!selectedDay&&dayBtns[0]) dayBtns[0].focus();
-        else if(!selectedTime&&timeBtns[0]) timeBtns[0].focus();
-        else if(!selectedPlace&&placeBtns[0]) placeBtns[0].focus();
+
+    function validate(){
+      var first=null;
+      function fail(key, text, focusEl){
+        showErr(key,text);
+        if(!first&&focusEl) first=focusEl;
+        return false;
       }
+      var ok=true;
+      if(!selectedDay) ok=fail('day',msg.day,dayBtns[0]); else hideErr('day');
+      if(!selectedTime) ok=fail('time',msg.time,timeBtns[0]); else hideErr('time');
+      if(!selectedPlace) ok=fail('place',msg.place,placeBtns[0]); else hideErr('place');
+      if(!selectedWho) ok=fail('who',msg.who,whoBtns[0]); else hideErr('who');
+      if(!selectedWhen) ok=fail('timeline',msg.when,whenBtns[0]); else hideErr('timeline');
+      var nameVal=nameInput.value.trim();
+      if(!nameVal){ setInvalid(nameInput,true); ok=fail('name',msg.name,nameInput); }
+      else { hideErr('name'); setInvalid(nameInput,false); }
+      var phoneVal=phoneInput.value.trim();
+      var digits=phoneVal.replace(/\D/g,'');
+      if(digits.length<10){ setInvalid(phoneInput,true); ok=fail('phone',msg.phone,phoneInput); }
+      else { hideErr('phone'); setInvalid(phoneInput,false); }
+      if(status) status.textContent=ok?'':msg.summary;
+      if(first) first.focus();
+      return ok?{name:nameVal,phone:phoneVal}:null;
+    }
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var vals=validate();
+      if(!vals) return;
+      var body=fill(template,{
+        date:selectedDay,
+        time:selectedTime,
+        place:selectedPlace,
+        who:selectedWho,
+        timeline:selectedWhen,
+        name:vals.name,
+        phone:vals.phone
+      });
+      window.location.href=smsHref(body);
     });
-    updateConfirm();
+
     box.classList.add('is-ready');
   })();
 

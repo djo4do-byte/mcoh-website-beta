@@ -53,26 +53,69 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="안녕하세요, 사전 계획을 하고 싶습니다. 희망 일시: {date}, {time}, {place}. 제 이름:" data-label-days="날짜 선택" data-need-selection="날짜, 시간대, 만날 장소를 먼저 선택해 주세요.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="안녕하세요, 사전 계획을 하고 싶습니다. 희망 일시: {date}, {time}, {place}. 대상: {who}. 시기: {timeline}. 이름: {name}. 전화: {phone}." data-label-days="날짜 선택" data-need-day="날짜를 선택해 주세요." data-need-time="시간대를 선택해 주세요." data-need-place="만날 장소를 선택해 주세요." data-need-who="누구를 위한 상담인지 선택해 주세요." data-need-timeline="시기를 선택해 주세요." data-need-name="이름을 입력해 주세요." data-need-phone="숫자가 10자리 이상인 전화번호를 입력해 주세요." data-need-summary="필수 항목을 모두 입력해 주세요.">
     <h2 id="plan-ahead-h">미리 준비하세요, 오늘의 가격으로 결제</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">비용이 없고 부담도 없습니다. 채플 또는 전화로 만나 드립니다.</p>
-    <div class="plan-ahead-picker">
-      <div class="plan-ahead-days" role="group" aria-label="날짜 선택"></div>
-      <div class="plan-ahead-times" role="group" aria-label="시간대 선택">
-        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="오전" aria-pressed="false">오전</button>
-        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="낮" aria-pressed="false">낮</button>
-        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="오후" aria-pressed="false">오후</button>
+    <p class="lede plan-ahead-sub">채플 또는 전화로 만나 드립니다.</p>
+    <form class="plan-ahead-picker" novalidate>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-day-legend">날짜 선택</p>
+        <div class="plan-ahead-days" role="group" aria-labelledby="plan-day-legend">
+        </div>
+        <p class="plan-field-error" data-error-for="day" hidden></p>
       </div>
-      <div class="plan-ahead-places" role="group" aria-label="만날 장소 선택">
-        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="채플에서" aria-pressed="false">채플</button>
-        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="전화로" aria-pressed="false">전화</button>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-time-legend">시간대 선택</p>
+        <div class="plan-ahead-times" role="group" aria-labelledby="plan-time-legend">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="오전" aria-pressed="false"><span class="plan-choice-label">오전</span></button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="낮" aria-pressed="false"><span class="plan-choice-label">낮</span></button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="오후" aria-pressed="false"><span class="plan-choice-label">오후</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="time" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-place-legend">만날 장소</p>
+        <div class="plan-ahead-places" role="group" aria-labelledby="plan-place-legend">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="채플에서" aria-pressed="false"><span class="plan-choice-label">채플</span></button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="전화로" aria-pressed="false"><span class="plan-choice-label">전화</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="place" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-who-legend">누구를 위한 상담인가요?</p>
+        <div class="plan-ahead-who" role="group" aria-labelledby="plan-who-legend">
+        <button type="button" class="btn plan-choice" data-who="self" data-who-label="본인" aria-pressed="false"><span class="plan-choice-label">본인</span></button>
+        <button type="button" class="btn plan-choice" data-who="family" data-who-label="부모 또는 배우자" aria-pressed="false"><span class="plan-choice-label">부모 또는 배우자</span></button>
+        <button type="button" class="btn plan-choice" data-who="info" data-who-label="정보만 알아보는 중" aria-pressed="false"><span class="plan-choice-label">정보만 알아보는 중</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="who" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-when-legend">시기</p>
+        <div class="plan-ahead-when" role="group" aria-labelledby="plan-when-legend">
+        <button type="button" class="btn plan-choice" data-timeline="soon" data-timeline-label="곧 (건강상의 이유)" aria-pressed="false"><span class="plan-choice-label">곧 (건강상의 이유)</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="year" data-timeline-label="1년 이내" aria-pressed="false"><span class="plan-choice-label">1년 이내</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="ahead" data-timeline-label="미리 준비" aria-pressed="false"><span class="plan-choice-label">미리 준비</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="timeline" hidden></p>
+      </div>
+      <div class="plan-ahead-fields">
+        <div class="plan-field">
+          <label for="plan-name">이름 <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label>
+          <input id="plan-name" name="plan-name" type="text" autocomplete="name" required aria-required="true" aria-describedby="plan-name-err">
+          <p class="plan-field-error" id="plan-name-err" data-error-for="name" hidden></p>
+        </div>
+        <div class="plan-field">
+          <label for="plan-phone">전화번호 <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label>
+          <input id="plan-phone" name="plan-phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="plan-phone-err">
+          <p class="plan-field-error" id="plan-phone-err" data-error-for="phone" hidden></p>
+        </div>
       </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
-      <p class="plan-ahead-note">신청입니다. 시간을 확인해 드리겠습니다.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">무료 사전 상담 신청하기</span></a>
+      <p class="plan-ahead-note">첫 단계는 상담사와의 짧은 전화입니다. 시간을 확인해 드리겠습니다.</p>
+      <button type="submit" class="btn plan-ahead-confirm" data-plan-confirm><span class="plan-ahead-confirm-label">사전 상담 신청하기</span></button>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">전화하시겠어요? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
-    </div>
+    </form>
     <div class="plan-ahead-fallback">
       <p>날짜를 정하시려면 전화하거나 문자를 보내 주세요.</p>
       <div class="btn-row">

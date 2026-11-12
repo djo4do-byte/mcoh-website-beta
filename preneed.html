@@ -53,26 +53,69 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. My name:" data-label-days="Choose a day" data-need-selection="Select a day, a time, and where to meet first.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. Who it's for: {who}. Timeline: {timeline}. Name: {name}. Phone: {phone}." data-label-days="Choose a day" data-need-day="Please choose a day." data-need-time="Please choose a time." data-need-place="Please choose where to meet." data-need-who="Please choose who this is for." data-need-timeline="Please choose a timeline." data-need-name="Please enter your name." data-need-phone="Please enter a phone number with at least 10 digits." data-need-summary="Please complete the required fields.">
     <h2 id="plan-ahead-h">Plan ahead, pay today’s prices</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">No cost, no obligation. Meet at our chapel or by phone.</p>
-    <div class="plan-ahead-picker">
-      <div class="plan-ahead-days" role="group" aria-label="Choose a day"></div>
-      <div class="plan-ahead-times" role="group" aria-label="Choose a time of day">
-        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="morning" aria-pressed="false">Morning</button>
-        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="midday" aria-pressed="false">Midday</button>
-        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="afternoon" aria-pressed="false">Afternoon</button>
+    <p class="lede plan-ahead-sub">Meet at our chapel or by phone.</p>
+    <form class="plan-ahead-picker" novalidate>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-day-legend">Choose a day</p>
+        <div class="plan-ahead-days" role="group" aria-labelledby="plan-day-legend">
+        </div>
+        <p class="plan-field-error" data-error-for="day" hidden></p>
       </div>
-      <div class="plan-ahead-places" role="group" aria-label="Choose where to meet">
-        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="at the chapel" aria-pressed="false">Chapel</button>
-        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="by phone" aria-pressed="false">Phone</button>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-time-legend">Choose a time</p>
+        <div class="plan-ahead-times" role="group" aria-labelledby="plan-time-legend">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="morning" aria-pressed="false"><span class="plan-choice-label">Morning</span></button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="midday" aria-pressed="false"><span class="plan-choice-label">Midday</span></button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="afternoon" aria-pressed="false"><span class="plan-choice-label">Afternoon</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="time" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-place-legend">Where to meet</p>
+        <div class="plan-ahead-places" role="group" aria-labelledby="plan-place-legend">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="at the chapel" aria-pressed="false"><span class="plan-choice-label">Chapel</span></button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="by phone" aria-pressed="false"><span class="plan-choice-label">Phone</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="place" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-who-legend">Who is this for?</p>
+        <div class="plan-ahead-who" role="group" aria-labelledby="plan-who-legend">
+        <button type="button" class="btn plan-choice" data-who="self" data-who-label="myself" aria-pressed="false"><span class="plan-choice-label">Myself</span></button>
+        <button type="button" class="btn plan-choice" data-who="family" data-who-label="a parent or spouse" aria-pressed="false"><span class="plan-choice-label">A parent or spouse</span></button>
+        <button type="button" class="btn plan-choice" data-who="info" data-who-label="just gathering information" aria-pressed="false"><span class="plan-choice-label">Just gathering information</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="who" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-when-legend">Timeline</p>
+        <div class="plan-ahead-when" role="group" aria-labelledby="plan-when-legend">
+        <button type="button" class="btn plan-choice" data-timeline="soon" data-timeline-label="soon (health concern)" aria-pressed="false"><span class="plan-choice-label">Soon (health concern)</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="year" data-timeline-label="within a year" aria-pressed="false"><span class="plan-choice-label">Within a year</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="ahead" data-timeline-label="planning ahead" aria-pressed="false"><span class="plan-choice-label">Planning ahead</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="timeline" hidden></p>
+      </div>
+      <div class="plan-ahead-fields">
+        <div class="plan-field">
+          <label for="plan-name">Name <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+          <input id="plan-name" name="plan-name" type="text" autocomplete="name" required aria-required="true" aria-describedby="plan-name-err">
+          <p class="plan-field-error" id="plan-name-err" data-error-for="name" hidden></p>
+        </div>
+        <div class="plan-field">
+          <label for="plan-phone">Phone <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+          <input id="plan-phone" name="plan-phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="plan-phone-err">
+          <p class="plan-field-error" id="plan-phone-err" data-error-for="phone" hidden></p>
+        </div>
       </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
-      <p class="plan-ahead-note">This is a request. We’ll confirm the time with you.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Book a free planning visit</span></a>
+      <p class="plan-ahead-note">The first step is a short phone call with a counselor. We’ll confirm the time with you.</p>
+      <button type="submit" class="btn plan-ahead-confirm" data-plan-confirm><span class="plan-ahead-confirm-label">Book a planning visit</span></button>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">Prefer to call? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
-    </div>
+    </form>
     <div class="plan-ahead-fallback">
       <p>Call or text us to pick a day.</p>
       <div class="btn-row">

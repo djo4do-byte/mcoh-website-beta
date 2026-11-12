@@ -53,26 +53,69 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Здравствуйте, я хотел(а) бы спланировать заранее. Запрос: {date}, {time}, {place}. Меня зовут:" data-label-days="Выберите день" data-need-selection="Сначала выберите день, время и место встречи.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Здравствуйте, я хотел(а) бы спланировать заранее. Запрос: {date}, {time}, {place}. Для кого: {who}. Сроки: {timeline}. Имя: {name}. Телефон: {phone}." data-label-days="Выберите день" data-need-day="Выберите день." data-need-time="Выберите время." data-need-place="Выберите место встречи." data-need-who="Укажите, для кого это." data-need-timeline="Выберите сроки." data-need-name="Укажите ваше имя." data-need-phone="Укажите номер телефона не менее чем из 10 цифр." data-need-summary="Заполните обязательные поля.">
     <h2 id="plan-ahead-h">Планируйте заранее — по сегодняшним ценам</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">Бесплатно и без обязательств. Встреча в нашей часовне или по телефону.</p>
-    <div class="plan-ahead-picker">
-      <div class="plan-ahead-days" role="group" aria-label="Выберите день"></div>
-      <div class="plan-ahead-times" role="group" aria-label="Выберите время суток">
-        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="утро" aria-pressed="false">Утро</button>
-        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="полдень" aria-pressed="false">Полдень</button>
-        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="после обеда" aria-pressed="false">После обеда</button>
+    <p class="lede plan-ahead-sub">Встреча в нашей часовне или по телефону.</p>
+    <form class="plan-ahead-picker" novalidate>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-day-legend">Выберите день</p>
+        <div class="plan-ahead-days" role="group" aria-labelledby="plan-day-legend">
+        </div>
+        <p class="plan-field-error" data-error-for="day" hidden></p>
       </div>
-      <div class="plan-ahead-places" role="group" aria-label="Выберите место встречи">
-        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="в часовне" aria-pressed="false">Часовня</button>
-        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="по телефону" aria-pressed="false">Телефон</button>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-time-legend">Выберите время</p>
+        <div class="plan-ahead-times" role="group" aria-labelledby="plan-time-legend">
+        <button type="button" class="btn plan-choice" data-time="morning" data-time-label="утро" aria-pressed="false"><span class="plan-choice-label">Утро</span></button>
+        <button type="button" class="btn plan-choice" data-time="midday" data-time-label="полдень" aria-pressed="false"><span class="plan-choice-label">Полдень</span></button>
+        <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="после обеда" aria-pressed="false"><span class="plan-choice-label">После обеда</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="time" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-place-legend">Место встречи</p>
+        <div class="plan-ahead-places" role="group" aria-labelledby="plan-place-legend">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="в часовне" aria-pressed="false"><span class="plan-choice-label">Часовня</span></button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="по телефону" aria-pressed="false"><span class="plan-choice-label">Телефон</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="place" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-who-legend">Для кого это?</p>
+        <div class="plan-ahead-who" role="group" aria-labelledby="plan-who-legend">
+        <button type="button" class="btn plan-choice" data-who="self" data-who-label="для себя" aria-pressed="false"><span class="plan-choice-label">Для себя</span></button>
+        <button type="button" class="btn plan-choice" data-who="family" data-who-label="для родителя или супруга" aria-pressed="false"><span class="plan-choice-label">Для родителя или супруга</span></button>
+        <button type="button" class="btn plan-choice" data-who="info" data-who-label="только собираю информацию" aria-pressed="false"><span class="plan-choice-label">Только собираю информацию</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="who" hidden></p>
+      </div>
+      <div class="plan-ahead-group">
+        <p class="plan-ahead-legend" id="plan-when-legend">Сроки</p>
+        <div class="plan-ahead-when" role="group" aria-labelledby="plan-when-legend">
+        <button type="button" class="btn plan-choice" data-timeline="soon" data-timeline-label="в ближайшее время (по состоянию здоровья)" aria-pressed="false"><span class="plan-choice-label">В ближайшее время (по состоянию здоровья)</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="year" data-timeline-label="в течение года" aria-pressed="false"><span class="plan-choice-label">В течение года</span></button>
+        <button type="button" class="btn plan-choice" data-timeline="ahead" data-timeline-label="планирую заранее" aria-pressed="false"><span class="plan-choice-label">Планирую заранее</span></button>
+        </div>
+        <p class="plan-field-error" data-error-for="timeline" hidden></p>
+      </div>
+      <div class="plan-ahead-fields">
+        <div class="plan-field">
+          <label for="plan-name">Имя <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(обязательно)</span></label>
+          <input id="plan-name" name="plan-name" type="text" autocomplete="name" required aria-required="true" aria-describedby="plan-name-err">
+          <p class="plan-field-error" id="plan-name-err" data-error-for="name" hidden></p>
+        </div>
+        <div class="plan-field">
+          <label for="plan-phone">Телефон <span class="plan-req" aria-hidden="true">*</span><span class="sr-only">(обязательно)</span></label>
+          <input id="plan-phone" name="plan-phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="plan-phone-err">
+          <p class="plan-field-error" id="plan-phone-err" data-error-for="phone" hidden></p>
+        </div>
       </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
-      <p class="plan-ahead-note">Это запрос. Мы подтвердим время с вами.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Записаться на бесплатную консультацию</span></a>
+      <p class="plan-ahead-note">Первый шаг — короткий телефонный разговор с консультантом. Мы подтвердим время с вами.</p>
+      <button type="submit" class="btn plan-ahead-confirm" data-plan-confirm><span class="plan-ahead-confirm-label">Записаться на консультацию</span></button>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">Предпочитаете позвонить? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
-    </div>
+    </form>
     <div class="plan-ahead-fallback">
       <p>Позвоните или напишите, чтобы выбрать день.</p>
       <div class="btn-row">
