@@ -647,3 +647,5 @@ body{background:#eef2ea}
 h3,.card h3,.card-h,.panel h3{font-size:1.5rem!important;font-weight:600;line-height:1.25}
 @media (max-width:700px){h3,.card h3,.card-h,.panel h3{font-size:1.45rem!important}}
 html[lang="ko"] h3,html[lang="ko"] .card-h{font-size:1.35rem!important}
+/* Keep section headings above box titles */
+h2{font-size:clamp(1.75rem,3vw,2.2rem)}
