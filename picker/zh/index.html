@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5a6e52">
+<title>Evergreen Mortuary of McAvoy O'Hara 長青殯儀館 — 服務選項（測試版）</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <div class="beta-banner" role="status">測試版</div>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1 class="brand-name" lang="en">Evergreen Mortuary</h1>
+      <div class="brand-sub" lang="en">of McAvoy O&rsquo;Hara</div><div class="brand-sub brand-zh">長青殯儀館</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-switch" role="group" aria-label="語言"><a href="../index.html" lang="en" hreflang="en" data-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="index.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh" aria-current="true">中文</a><span class="sep" aria-hidden="true">·</span><a href="../es/index.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="../ko/index.html" lang="ko" hreflang="ko" data-lang="ko">한국어</a><span class="sep" aria-hidden="true">·</span><a href="../ru/index.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div>
+      <span class="mode-badge" id="mode-badge" hidden></span>
+      <div class="step-pills" id="step-pills" aria-hidden="true">
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-body" id="app-body" tabindex="0">
+
+    <!-- HOME / LANDING -->
+    <section class="screen screen-home active" data-screen="home" aria-label="歡迎">
+      <div class="home-page">
+        <div class="home-hero">
+          <div class="home-leaf" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 6C20 6 8 14 8 24c0 6.627 5.373 10 12 10s12-3.373 12-10C32 14 20 6 20 6z" stroke="#5a6e52" stroke-width="1.5" fill="#e8efe4"/>
+              <path d="M20 16v18M20 22c-4 0-7 2-8 5M20 20c4 0 7 2 8 5" stroke="#5a6e52" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <p class="home-kicker">McAvoy O&rsquo;Hara Company · FD523</p>
+          <h2 class="home-title">我們在這裡陪伴您</h2>
+          <p class="home-tagline">
+            您不必獨自面對 — 我們會以沉穩可靠的支持與耐心的聆聽引導您。
+          </p>
+          <div class="home-contact">
+            4545 Geary Boulevard, San Francisco, CA 94118<br>
+            <a href="tel:+14156680077">(415) 668-0077</a>
+            <span class="home-hours-inline"> · 24 小時服務</span>
+          </div>
+          <div class="home-divider" aria-hidden="true"></div>
+          <h2 class="home-cta-label">我們能如何協助您？</h2>
+          <div class="home-ctas home-ctas-primary" role="group" aria-label="安排類型">
+            <button type="button" class="mode-card" data-mode="at-need" onclick="selectMode('at-need', true)">
+              <div class="mode-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/></svg>
+              </div>
+              <h3>即時需要</h3>
+              <p>至親已經離世 — 我們會陪伴您走過接下來的每一步。</p>
+              <span class="cta-arrow">開始</span>
+            </button>
+            <button type="button" class="mode-card mode-card-preneed" data-mode="preneed" onclick="selectMode('preneed', true)">
+              <div class="mode-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h9l3 3v13H6z"/><path d="M14 4v4h4"/><path d="M8 12h8M8 16h6"/></svg>
+              </div>
+              <h3>生前預購合約</h3>
+              <p>按照您自己的步調記錄心願。</p>
+              <span class="cta-arrow">開始規劃</span>
+            </button>
+          </div>
+          <button type="button" class="home-cremation-cta" onclick="startCremation()">
+            <span class="home-cremation-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9z"/></svg>
+            </span>
+            <span class="home-cremation-text">
+              <strong>火化</strong>
+              <span>選項與價格</span>
+            </span>
+            <span class="cta-arrow">查看選項</span>
+          </button>
+          <p class="home-trust">
+            由禮儀師引導 · 一般價目表範本（2026 年 9 月 1 日）
+          </p>
+          <div class="home-resume" id="home-resume" hidden>
+            <button type="button" onclick="resumeSession()">繼續上次的進度</button>
+          </div>
+        </div>
+
+        <section class="home-history" aria-labelledby="history-heading">
+          <h2 id="history-heading">我們的歷史</h2>
+          <div class="history-rule" aria-hidden="true"></div>
+          <div class="history-body">
+            <p>
+              McAvoy O’Hara Company 是三藩市歷史最悠久的殯儀館之一，也是加州歷史最悠久的獨立殯葬企業之一。公司約於 1850 年以 Flanigan &amp; Gallagher 之名創立，其後改名為 McAvoy &amp; Gallagher，再成為 McAvoy, O’Hara &amp; Company。
+            </p>
+            <p>
+              我們始終由家族經營：今天，第三代禮儀師 Richard O’Hara 與 Dan O’Hara III 延續用心而從容的服務傳統。
+            </p>
+            <p>
+              三藩市市政府曾表揚我們長期服務社區，包括在本公司 150 週年時頒發的嘉許。
+            </p>
+          </div>
+        </section>
+
+        <section class="home-contact-block" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">親臨與來電</h2>
+          <div class="history-rule" aria-hidden="true"></div>
+          <div class="contact-grid">
+            <div>
+              <h3>Evergreen Mortuary</h3>
+              <p>4545 Geary Boulevard<br>San Francisco, CA 94118</p>
+              <p class="contact-phone"><a href="tel:+14156680077">(415) 668-0077</a></p>
+            </div>
+            <div>
+              <h3>殯儀館辦公時間</h3>
+              <p>今日開放洽談安排<br>上午 9:00 – 下午 5:00</p>
+              <p class="contact-note">McAvoy O&rsquo;Hara Company · FD523</p>
+            </div>
+          </div>
+        </section>
+        <p class="tr-note">翻譯審閱中</p>
+      </div>
+    </section>
+
+
+    <!-- PRENEED INTRO / EDUCATE -->
+    <section class="screen" data-screen="preneed-intro" aria-label="關於生前預購合約">
+      <div class="preneed-intro">
+        <p class="preneed-kicker">生前預購合約</p>
+        <h2>預先規劃 — 讓家人不必猜測</h2>
+        <p class="subtitle">親人離世時，許多無法更改的決定必須在數小時內作出。家屬常說，他們不確定至親生前會希望怎樣安排。預先規劃的諮詢，讓您能在平靜的商談氛圍中作出決定。</p>
+        <ul class="preneed-points">
+          <li><strong>您的心願，家人清楚知道。</strong> 趁有時間從容考慮，記錄您的意願 — 從禮堂時段到火化。</li>
+          <li><strong>減少家人的困惑。</strong> 為日後替您安排的人減少倉促的決定。</li>
+          <li><strong>需要時，只需一通電話。</strong> 由您指定的人士致電我們；我們便依照您設定的意願辦理。</li>
+        </ul>
+        <p class="preneed-note">接下來，您可選擇的服務選項與一般安排相同。禮儀師會與您一同完成生前預購合約 — 在此平板電腦上所作的選擇並非最終決定。</p>
+        <button type="button" class="nav-btn primary preneed-continue" onclick="continueFromPreneedIntro()">繼續選擇服務</button>
+      </div>
+    </section>
+
+    <!-- PATH CHOOSER -->
+    <section class="screen" data-screen="path" aria-label="選擇服務類別">
+      <h2>哪一項適合您？</h2>
+      <p class="subtitle">輕按卡片即可選擇，稍後仍可更改。</p>
+      <div class="path-grid">
+        <button type="button" class="path-card" data-path="gather" onclick="selectPath('gather')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><circle cx="14" cy="10" r="4"/><path d="M6 22c0-4 3.5-6 8-6s8 2 8 6"/><circle cx="22" cy="11" r="3"/><path d="M22 16c2.5.5 4 2 4 4"/><circle cx="6" cy="11" r="3"/><path d="M6 16c-2.5.5-4 2-4 4"/></svg>
+          </div>
+          <h3>葬禮、追思會或瞻仰遺容</h3>
+          <p>於本館禮堂或其他地點舉行，包括墓前。</p>
+          <div class="path-check">✓ 已選擇</div>
+        </button>
+        <button type="button" class="path-card" data-path="cremation" onclick="selectPath('cremation')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><path d="M6 20 L14 8 L22 20 Z"/><circle cx="14" cy="16" r="2"/></svg>
+          </div>
+          <h3>火化</h3>
+          <p>直接火化、連同瞻仰遺容或葬禮的火化、見證火化，或日後舉行追思會。</p>
+          <div class="path-check">✓ 已選擇</div>
+        </button>
+        <button type="button" class="path-card" data-path="faraway" onclick="selectPath('faraway')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9"/><path d="M5 14h18M14 5c3 3 3 15 0 18M14 5c-3 3-3 15 0 18"/></svg>
+          </div>
+          <h3>遺體接收或運送</h3>
+          <p>亦包括寄送骨灰。</p>
+          <div class="path-check">✓ 已選擇</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- PATH OPTIONS -->
+    <section class="screen" data-screen="options" aria-label="選項">
+      <h2 id="options-title">選項</h2>
+      <p class="subtitle" id="options-subtitle">選擇適合您家庭的安排。</p>
+
+      <!-- GATHER -->
+      <div class="path-panel" data-path-panel="gather" id="opts-gather-wrap">
+        <div class="option-list compact" id="opts-gather">
+
+          <div class="option-block" data-gather-type="quiet">
+            <div class="option-item" data-id="gather-quiet" data-path="gather" data-group="gather-main" data-name="瞻仰遺容" data-price="1160" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>瞻仰遺容</h3>
+                <div class="option-subtitle">靜思時段</div>
+                <p>不包括葬禮或追思會。</p>
+                <div class="includes-block">
+                  <div class="includes-heading">此費用包括：</div>
+                  <ul>
+                    <li>使用設施（禮堂或會客廳），最長 2 小時</li>
+                    <li>由工作人員負責瞻仰遺容的場地開放、現場招待及結束安排</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (First Hour) *</span> <span class="opt-gpl-price">$ 500</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-first-hour">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (First Hour) *</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., before 9PM)</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-befor">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., before 9PM)</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., after 9PM)</span> <span class="opt-gpl-price">$ 350</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-after">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., after 9PM)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+              <div class="option-meta"><span class="price" id="price-gather-quiet">$500 起</span></div>
+            </div>
+            <div class="nested-panel" id="panel-quiet" aria-label="瞻仰遺容詳情">
+              <div class="nest-group">
+                <div class="nest-label">設施及人員服務</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="chapel-up-to-2hrs" data-group="quiet-duration" data-name="設施使用最長 2 小時" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>最長 2 小時</h4><p>於禮堂或會客廳瞻仰遺容。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="chapel-first-hour" data-group="quiet-duration" data-name="設施 — 第一小時" data-price="500" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>第一小時</h4><p class="opt-plain">使用本館禮堂或會客廳的第一小時。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (First Hour) *</span> <span class="opt-gpl-price">$ 500</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-first-hour">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (First Hour) *</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$500</div>
+                </div>
+                <div class="nest-option" data-id="chapel-add-hour" data-group="quiet-add" data-name="設施 — 額外每小時（晚上 9 時前）" data-price="250" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>額外每小時（晚上 9 時前）</h4><p class="opt-plain">晚上 9 時前，每增加一小時使用本館禮堂或會客廳。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., before 9PM)</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-befor">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., before 9PM)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$250</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="memorial">
+            <div class="option-item" data-id="gather-memorial" data-path="gather" data-group="gather-main" data-name="追思會" data-price="3020" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>追思會</h3>
+                <p>可設或不設遺體。</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">在一般價目表中查看<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-gather-memorial">$1,150 起</span></div>
+            </div>
+            <div class="nested-panel" id="panel-memorial" aria-label="追思會詳情">
+              <div class="nest-group">
+                <div class="nest-label">選項</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="pkg-memorial" data-group="memorial-where" data-name="追思會套裝" data-price="3020" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>追思會套裝</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block">
+                      <div class="includes-heading">此套裝包括：</div>
+                      <ul>
+                        <li>追思會／直接照護方案的基本服務</li>
+                        <li>於本殯儀館瞻仰遺容（靜思時段）</li>
+                        <li>追思會 — 設施及人員服務最長 2 小時</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">包含直接安葬或火化所含的全部服務，另可使用本館其中一間禮堂或會客廳（最長 2 小時），用於靜思時段、瞻仰遺容或追思會。最終安葬另行安排時間。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a></div></details></div>
+                  <div class="nest-meta">$3,020</div>
+                </div>
+                <div class="nest-option" data-id="memorial-chapel-ala" data-group="memorial-where" data-name="追思會（最長 2 小時）" data-price="1150" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>追思會（僅設施）</h4>
+                    <div class="includes-block">
+                      <div class="includes-heading">此費用包括：</div>
+                      <ul>
+                        <li>於廳堂或禮堂舉行追思會</li>
+                        <li>設施及人員服務最長 2 小時</li>
+                      </ul>
+                    </div>
+                  <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">在一般價目表中查看<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$1,150</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="funeral">
+            <div class="option-item" data-id="gather-funeral" data-path="gather" data-group="gather-main" data-name="葬禮" data-price="—" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>葬禮</h3>
+                <p>在遺體前舉行，可於本館禮堂、教堂或其他地點。</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-chapel-church-funeral-service">在一般價目表中查看<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-gather-funeral">$4,280 起</span></div>
+            </div>
+            <div class="nested-panel" id="panel-funeral" aria-label="葬禮詳情">
+              <div class="nest-group">
+                <div class="nest-label">儀式形式</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="style-mass" data-group="funeral-style" data-name="追思彌撒" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>追思彌撒</h4><p>於本館禮堂或您的宗教場所舉行；我們負責協調場地與時間。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-funeral-svc" data-group="funeral-style" data-name="葬禮" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>葬禮</h4><p>由主禮人或司儀主持，於本館禮堂或其他地點舉行。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-memorial-svc" data-group="funeral-style" data-name="追思會" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>追思會</h4><p>依安排使用禮堂或設施時段的聚會。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-procession" data-group="funeral-style" data-name="伴樂送殯行列" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>伴樂送殯行列</h4><p>請在「送殯行列與交通」中加入細節。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-simple" data-group="funeral-style" data-name="簡約葬禮" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>簡約葬禮</h4><p>使用禮堂或設施時段，不設正式送殯行列。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">地點</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="pkg-funeral-evergreen" data-group="funeral-where" data-name="於 Evergreen Mortuary 舉行葬禮" data-price="4520" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>於 Evergreen Mortuary 舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block"><div class="includes-heading">此套裝包括：</div>
+                      <ul>
+                        <li>葬禮前的瞻仰遺容</li>
+                        <li>設施及人員服務</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">本館禮堂或會客廳可供葬禮前的瞻仰遺容之用，最長 2 小時，並視情況提供停車位。可舉行傳統或非傳統的儀式；亦可安排於上午、下午或晚上進行瞻仰遺容或守靈。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,520</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-church" data-group="funeral-where" data-name="於教堂或其他地點舉行葬禮" data-price="4280" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>於教堂或其他地點舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block"><div class="includes-heading">此套裝包括：</div>
+                      <ul>
+                        <li>於教堂、墓園或其他地點舉行葬禮</li>
+                        <li>負責協調及到場服務的人員與設備</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">我們為在當地教堂、墓園禮拜堂或您選定的其他地點舉行的瞻仰遺容、守靈及葬禮提供人員與準備工作。教堂使用時間最長 1 小時。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,280</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-chapel-church" data-group="funeral-where" data-name="瞻仰遺容及於教堂舉行葬禮" data-price="4680" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>瞻仰遺容及於教堂舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block"><div class="includes-heading">此套裝包括：</div>
+                      <ul>
+                        <li>事先於本殯儀館瞻仰遺容</li>
+                        <li>於教堂舉行葬禮</li>
+                        <li>兩者的設施及人員服務</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">使用禮堂或會客廳進行瞻仰遺容，之後前往教堂或禮堂舉行葬禮，再至墓園舉行安葬儀式。可安排於上午、下午或晚上進行瞻仰遺容或守靈。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-chapel-church-funeral-service">在一般價目表中查看<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,680</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">送殯行列與交通</div>
+                <div class="nest-hint">可選擇多項。護送及音樂將與禮儀師一同安排。</div>
+                <div class="nest-option" data-id="procession-hearse" data-group="funeral-customs" data-name="靈車" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>靈車</h4><p>前往教堂或墓園。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Hearse for Funeral and, or Committal or Delivery</span> <span class="opt-gpl-price">$ 685</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-hearse-for-funeral-and-or-committal-or-deliv">在一般價目表中查看<span class="opt-sr" lang="en"> Hearse for Funeral and, or Committal or Delivery</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta tbd">依安排</div>
+                </div>
+                <div class="nest-option" data-id="procession-band" data-group="funeral-customs" data-name="步行或伴樂送殯行列" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>步行或伴樂送殯行列</h4><p>由樂手伴隨的短程送殯行列；我們負責協調時間與路線。</p></div>
+                  <div class="nest-meta tbd">由家屬安排</div>
+                </div>
+                <div class="nest-option" data-id="motorcycle-escorts" data-group="funeral-customs" data-name="電單車護送" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>電單車護送</h4><p>用於送殯行列。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Motorcycle Escorts - Minimum of 2 required (10 cars per Escort), billed at cost</span> <span class="opt-gpl-price">….</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-motorcycle-escorts-minimum-of-2-required-10-">在一般價目表中查看<span class="opt-sr" lang="en"> Motorcycle Escorts - Minimum of 2 required (10 cars per Escort), billed at cost</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta tbd">按實收費</div>
+                </div>
+                <div class="nest-option" data-id="flower-car" data-group="funeral-customs" data-name="花車前往墓園" data-price="285" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>花車前往墓園</h4><p>隨送殯行列同行。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Floral car for scheduled delivery to the Cemetery</span> <span class="opt-gpl-price">$ 285</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-floral-car-for-scheduled-delivery-to-the-cem">在一般價目表中查看<span class="opt-sr" lang="en"> Floral car for scheduled delivery to the Cemetery</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$285</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">葬禮前</div>
+                <div class="nest-option" id="nest-funeral-visiting" data-id="funeral-visiting" data-group="funeral-before" data-name="事先瞻仰遺容" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>事先瞻仰遺容</h4><p>於儀式前在本殯儀館舉行。 <span style="color:var(--text-muted)">靜思時段</span></p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta" id="meta-funeral-visiting">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="prep-viewing" data-group="funeral-before" data-name="瞻仰遺容前的遺體整理" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>瞻仰遺容前的遺體整理</h4><p class="opt-plain">包括清潔與整理髮型、化妝、更衣及入殮。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">在一般價目表中查看<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">葬禮後</div>
+                <div class="nest-option" data-id="committal-addon" data-group="funeral-after" data-name="葬禮後的墓前儀式／安葬儀式" data-price="625" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>葬禮後的墓前儀式／安葬儀式</h4><p>於葬禮之後舉行。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Committal Services or scheduled arrival for disposition</span> <span class="opt-gpl-price">$ 625</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-committal-services-or-scheduled-arrival-for-">在一般價目表中查看<span class="opt-sr" lang="en"> Committal Services or scheduled arrival for disposition</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$625</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="graveside">
+            <div class="option-item" data-id="pkg-graveside" data-path="gather" data-group="gather-main" data-name="墓前儀式／安葬儀式" data-price="3580" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>墓前儀式／安葬儀式</h3>
+                <p>亦適用於見證火化 — 不包括在本殯儀館舉行的葬禮。</p>
+                <div class="includes-block">
+                  <div class="includes-heading">此套裝包括：</div>
+                  <ul>
+                    <li>墓前儀式或安葬儀式所需的設備及人員</li>
+                    <li>於墓園或最終安置地點的協調工作</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span> <span class="opt-gpl-price">$3,580</span></div><div class="opt-gpl-desc">This service provides for family and friends to meet at the Gravesite Committal Service at the selected cemetery, which includes the services provided under Direct Interment or Cremation.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-gravesite-committal-service-or-witness-crema">在一般價目表中查看<span class="opt-sr" lang="en"> GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$3,580</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREMATION -->
+      <div class="path-panel" data-path-panel="cremation">
+        <div class="option-list compact" id="opts-cremation">
+
+          <div class="option-block" data-cremation-type="direct">
+            <div class="option-item" data-id="direct-cremation" data-path="cremation" data-group="cremation-main" data-name="直接火化" data-price="1820" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>直接火化</h3>
+                <p class="pkg-total-tag">套裝總價</p>
+                <div class="includes-block">
+                  <div class="includes-heading">此套裝包括：</div>
+                  <ul>
+                    <li>禮儀師及工作人員的基本服務</li>
+                    <li>遺體接運（本地，日間）</li>
+                    <li>依需要照護遺體</li>
+                    <li>所需文件及授權</li>
+                  </ul>
+                </div>
+                <div class="hint">連火化容器 $1,945 起</div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT INTERMENT OR CREMATION:</span> <span class="opt-gpl-price">$ 1,820</span></div><div class="opt-gpl-desc">This service includes appropriate documents and authorizations, local daytime ambulance, care and limited preparation and general care of remains. If you want to arrange a direct cremation, you can use an alternative container. Alternative containers encase the body and can be made of materials like fiberboard or composition materials (with or without outside covering) the container we provide is of fiberboard. In addition, as above including container for cremation $1,945. Direct Interment including minimum burial container $2,820. Pacemaker removal additional cost.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-direct-interment-or-cremation">在一般價目表中查看<span class="opt-sr" lang="en"> DIRECT INTERMENT OR CREMATION:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$1,820</span></div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="visitation">
+            <div class="option-item" data-id="cremation-visitation" data-path="cremation" data-group="cremation-main" data-name="連同瞻仰遺容的火化" data-price="—" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>連同瞻仰遺容的火化</h3>
+                <p>火化前瞻仰遺容。</p>
+              </div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-cremation-visitation">$3,670 起</span></div>
+            </div>
+            <div class="nested-panel" aria-label="連同瞻仰遺容的火化詳情">
+              <div class="nest-group">
+                <div class="nest-label">常見組合</div>
+                <div class="nest-hint">已預設選取 — 可與禮儀師按需要調整。</div>
+                <div class="nest-option" data-id="crem-vis-prep" data-group="crem-vis-parts" data-name="瞻仰遺容前的遺體整理" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>瞻仰遺容前的遺體整理</h4><p class="opt-plain">包括清潔與整理髮型、化妝、更衣及入殮。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">在一般價目表中查看<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+                <div class="nest-option" data-id="crem-vis-hours" data-group="crem-vis-parts" data-name="瞻仰遺容 — 設施使用最長 2 小時" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>瞻仰遺容（最長 2 小時）</h4><p>使用設施及人員。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="crem-vis-direct" data-group="crem-vis-parts" data-name="直接火化" data-price="1820" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>直接火化</h4><p>瞻仰遺容後進行火化。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT INTERMENT OR CREMATION:</span> <span class="opt-gpl-price">$ 1,820</span></div><div class="opt-gpl-desc">This service includes appropriate documents and authorizations, local daytime ambulance, care and limited preparation and general care of remains. If you want to arrange a direct cremation, you can use an alternative container. Alternative containers encase the body and can be made of materials like fiberboard or composition materials (with or without outside covering) the container we provide is of fiberboard. In addition, as above including container for cremation $1,945. Direct Interment including minimum burial container $2,820. Pacemaker removal additional cost.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-direct-interment-or-cremation">在一般價目表中查看<span class="opt-sr" lang="en"> DIRECT INTERMENT OR CREMATION:</span></a></div></details></div>
+                  <div class="nest-meta">$1,820</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="funeral">
+            <div class="option-item" data-id="cremation-funeral" data-path="cremation" data-group="cremation-main" data-name="連同葬禮的火化" data-price="—" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>連同葬禮的火化</h3>
+                <p>在遺體前舉行儀式，其後火化。請於下方選擇套裝。</p>
+              </div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-cremation-funeral">$4,280 起</span></div>
+            </div>
+            <div class="nested-panel" aria-label="連同葬禮的火化詳情">
+              <div class="nest-group">
+                <div class="nest-label">儀式形式</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="style-mass" data-group="crem-funeral-style" data-name="追思彌撒" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>追思彌撒</h4><p>於本館禮堂或您的宗教場所舉行；我們負責協調場地與時間。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-funeral-svc" data-group="crem-funeral-style" data-name="葬禮" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>葬禮</h4><p>由主禮人或司儀主持，於本館禮堂或其他地點舉行。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-memorial-svc" data-group="crem-funeral-style" data-name="追思會" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>追思會</h4><p>依安排使用禮堂或設施時段的聚會。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+                <div class="nest-option" data-id="style-simple" data-group="crem-funeral-style" data-name="簡約葬禮" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>簡約葬禮</h4><p>使用禮堂或設施時段，不設正式送殯行列。</p></div>
+                  <div class="nest-meta tbd">用以確定整體安排</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">地點</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="pkg-funeral-evergreen" data-group="crem-funeral-where" data-name="於 Evergreen Mortuary 舉行葬禮" data-price="4520" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>於 Evergreen Mortuary 舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block"><div class="includes-heading">此套裝包括：</div>
+                      <ul><li>葬禮前的瞻仰遺容</li><li>設施及人員服務</li></ul>
+                    </div>
+                  <p class="opt-plain">本館禮堂或會客廳可供葬禮前的瞻仰遺容之用，最長 2 小時，並視情況提供停車位。可舉行傳統或非傳統的儀式；亦可安排於上午、下午或晚上進行瞻仰遺容或守靈。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,520</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-church" data-group="crem-funeral-where" data-name="於教堂或其他地點舉行葬禮" data-price="4280" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>於教堂或其他地點舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                  <p class="opt-plain">我們為在當地教堂、墓園禮拜堂或您選定的其他地點舉行的瞻仰遺容、守靈及葬禮提供人員與準備工作。教堂使用時間最長 1 小時。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">在一般價目表中查看<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,280</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-chapel-church" data-group="crem-funeral-where" data-name="瞻仰遺容及於教堂舉行葬禮" data-price="4680" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>瞻仰遺容及於教堂舉行葬禮</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                  <p class="opt-plain">使用禮堂或會客廳進行瞻仰遺容，之後前往教堂或禮堂舉行葬禮，再至墓園舉行安葬儀式。可安排於上午、下午或晚上進行瞻仰遺容或守靈。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-chapel-church-funeral-service">在一般價目表中查看<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,680</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">葬禮前</div>
+                <div class="nest-option" id="nest-crem-funeral-visiting" data-id="funeral-visiting" data-group="funeral-before" data-name="事先瞻仰遺容" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>事先瞻仰遺容</h4><p>於儀式前在本殯儀館舉行。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="prep-viewing" data-group="funeral-before" data-name="瞻仰遺容前的遺體整理" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>瞻仰遺容前的遺體整理</h4><p class="opt-plain">包括清潔與整理髮型、化妝、更衣及入殮。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">在一般價目表中查看<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="witness">
+            <div class="option-item" data-id="witness-cremation" data-path="cremation" data-group="cremation-main" data-name="見證火化" data-price="3580" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>見證火化</h3>
+                <p class="pkg-total-tag">套裝總價</p>
+                <p>不包括在本殯儀館舉行的葬禮。</p>
+                <div class="includes-block">
+                  <div class="includes-heading">此套裝包括：</div>
+                  <ul>
+                    <li>墓前儀式、安葬儀式或見證火化所需的設備及人員</li>
+                    <li>於墓園或最終安置地點的協調工作</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span> <span class="opt-gpl-price">$3,580</span></div><div class="opt-gpl-desc">This service provides for family and friends to meet at the Gravesite Committal Service at the selected cemetery, which includes the services provided under Direct Interment or Cremation.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-gravesite-committal-service-or-witness-crema">在一般價目表中查看<span class="opt-sr" lang="en"> GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$3,580</span></div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="memorial">
+            <div class="option-item" data-id="cremation-memorial" data-path="cremation" data-group="cremation-main" data-name="火化後的追思會" data-price="1150" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>火化後的追思會</h3>
+                <p>於日後舉行。</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">在一般價目表中查看<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint">$1,150 起</span></div>
+            </div>
+            <div class="nested-panel" aria-label="火化後的追思會">
+              <div class="nest-group">
+                <div class="nest-label">追思會選項</div>
+                <div class="nest-hint">請從以下選擇一項：</div>
+                <div class="nest-option" data-id="memorial-after-pkg" data-group="crem-memorial-where" data-name="追思會套裝" data-price="3020" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>追思會套裝</h4>
+                    <p class="pkg-total-tag">套裝總價</p>
+                    <div class="includes-block"><div class="includes-heading">此套裝包括：</div>
+                      <ul>
+                        <li>追思會／直接照護方案的基本服務</li>
+                        <li>於本殯儀館瞻仰遺容（靜思時段）</li>
+                        <li>追思會 — 設施及人員服務最長 2 小時</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">包含直接安葬或火化所含的全部服務，另可使用本館其中一間禮堂或會客廳（最長 2 小時），用於靜思時段、瞻仰遺容或追思會。最終安葬另行安排時間。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">在一般價目表中查看<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a></div></details></div>
+                  <div class="nest-meta">$3,020</div>
+                </div>
+                <div class="nest-option" data-id="memorial-later" data-group="crem-memorial-where" data-name="擇日舉行追思會" data-price="1150" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>追思會（僅設施）</h4>
+                    <p>設施及人員服務最長 2 小時。</p>
+                  <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">在一般價目表中查看<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+                  <div class="nest-meta">$1,150</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="ship">
+            <div class="option-item" data-id="ship-cremains" data-path="cremation" data-name="寄送骨灰（美國境內）" data-price="250" onclick="toggleOption(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>寄送骨灰（美國境內）</h3>
+                <p>可加入任何火化方案。</p>
+              <p class="opt-plain">寄送骨灰至美國本土境內。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Shipping cremated remains, within continental United States</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-shipping-cremated-remains-within-continental">在一般價目表中查看<span class="opt-sr" lang="en"> Shipping cremated remains, within continental United States</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+              <div class="option-meta"><span class="price">$250</span></div>
+            </div>
+          </div>
+
+          <div class="option-item" data-id="private-id" data-path="cremation" data-name="私人辨認遺體" data-price="990" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>私人辨認遺體</h3>
+              <p>火化前供私人辨認遺體的有限度照護，連同第一小時的設施使用。</p>
+              <div class="hint">最終安排由禮儀師確認</div>
+            </div>
+            <div class="option-meta"><span class="price">$990</span></div>
+          </div>
+
+          <div class="option-item" data-id="urn-selection" data-path="cremation" data-name="選擇骨灰罈" data-price="—" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>選擇骨灰罈</h3>
+              <p>商品另行計價。</p>
+            </div>
+            <div class="option-meta"><span class="price tbd">請向禮儀師查詢</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FARAWAY -->
+      <div class="path-panel" data-path-panel="faraway">
+        <div class="option-list" id="opts-faraway">
+          <div class="option-item" data-id="care-here" data-path="faraway" data-group="transfer-direction" data-name="遺體接收" data-price="2000" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>遺體接收</h3>
+              <div class="includes-block">
+                <div class="includes-heading">此費用包括：</div>
+                <ul>
+                  <li>於本殯儀館接收遺體</li>
+                  <li>禮儀師及工作人員的基本服務</li>
+                  <li>在確認安排期間的暫時照護</li>
+                </ul>
+              </div>
+            <p class="opt-plain">包括接運至接收站的救護車、本館基本服務，以及在儀式、安葬或火化前的有限度照護。不包括任何未列明的服務、加州許可證申報費、商品，或外層運輸容器的處理。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">RECEIVING REMAINS:</span> <span class="opt-gpl-price">$ 2000</span></div><div class="opt-gpl-desc">Provides with this selection is an ambulance to receiving depot, in addition to basic services and limited care of the remains prior to services, interment or cremation, and not including any unspecified services, California Permit filing fee, merchandise or disposal of outer shipping container.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-receiving-remains">在一般價目表中查看<span class="opt-sr" lang="en"> RECEIVING REMAINS:</span></a></div></details></div>
+            <div class="option-meta"><span class="price">$2,000</span></div>
+          </div>
+          <div class="option-item" data-id="shipping" data-path="faraway" data-group="transfer-direction" data-name="遺體運送" data-price="2980" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>遺體運送</h3>
+              <div class="includes-block">
+                <div class="includes-heading">此費用包括：</div>
+                <ul>
+                  <li>禮儀師及工作人員為遺體運送提供的基本服務</li>
+                  <li>本地接運及運送前的準備</li>
+                  <li>所需授權及表格</li>
+                </ul>
+              </div>
+              <div class="hint">不包括運送棺箱／航空托盤</div>
+            <p class="opt-plain">包括本地日間救護車、本館專業服務、為運送所做的準備，以及本地運往承運人轉運站。不包括運輸容器、航空托盤或任何應繳銷售稅。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT FORWARDING OF REMAINS:</span> <span class="opt-gpl-price">$2,980</span></div><div class="opt-gpl-desc">Provides for local daytime ambulance, professional services, preparation of remains for transit, and local transport to Carrier’s Terminal, and does not include the shipping container, air tray or any sales tax due.</div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-pkg-direct-forwarding-of-remains">在一般價目表中查看<span class="opt-sr" lang="en"> DIRECT FORWARDING OF REMAINS:</span></a></div></details></div>
+            <div class="option-meta"><span class="price">$2,980</span></div>
+          </div>
+          <div class="option-item" data-id="ship-cremains" data-path="faraway" data-name="寄送骨灰（美國境內）" data-price="250" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>寄送骨灰（美國境內）</h3>
+            <p class="opt-plain">寄送骨灰至美國本土境內。</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Shipping cremated remains, within continental United States</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-shipping-cremated-remains-within-continental">在一般價目表中查看<span class="opt-sr" lang="en"> Shipping cremated remains, within continental United States</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+            <div class="option-meta"><span class="price">$250</span></div>
+          </div>
+          <div class="option-item" data-id="distant-memorial" data-path="faraway" data-name="擇日舉行追思會" data-price="1150" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>擇日舉行追思會</h3>
+              <p>設施及人員服務最長 2 小時。</p>
+            <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">在一般價目表中查看<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+            <div class="option-meta"><span class="price">$1,150</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD-ONS -->
+    <section class="screen" data-screen="addons" aria-label="附加用品">
+      <h2>附加用品與服務</h2>
+      <p class="subtitle">以下項目可搭配任何方案。請選擇能讓這一天更圓滿的安排。</p>
+      <div class="option-list compact" id="opts-addons">
+        <div class="option-item" data-id="programs" data-path="addon" data-name="簽到簿" data-price="35" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>簽到簿</h3>
+            <p>儀式的來賓簽到簿。</p>
+            <div class="hint">祈禱卡 $6 起／每版 8 張</div>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Register Book</span> <span class="opt-gpl-price">$35</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-register-book">在一般價目表中查看<span class="opt-sr" lang="en"> Register Book</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$35</span></div>
+        </div>
+        <div class="option-item" data-id="ack-cards" data-path="addon" data-name="答謝卡" data-price="35" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>答謝卡</h3>
+            <p>答謝親友對您家人關懷的謝卡。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Acknowledgment Cards (per boxes)</span> <span class="opt-gpl-price">$35</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-acknowledgment-cards-per-boxes">在一般價目表中查看<span class="opt-sr" lang="en"> Acknowledgment Cards (per boxes)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$35</span></div>
+        </div>
+        <div class="option-item" data-id="flower-car" data-path="addon" data-name="花車前往墓園" data-price="285" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>花車前往墓園</h3>
+            <p>以花車將花送往墓園；鮮花另計。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Floral car for scheduled delivery to the Cemetery</span> <span class="opt-gpl-price">$ 285</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-floral-car-for-scheduled-delivery-to-the-cem">在一般價目表中查看<span class="opt-sr" lang="en"> Floral car for scheduled delivery to the Cemetery</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$285</span></div>
+        </div>
+        <div class="option-item" data-id="reception" data-path="addon" data-name="於禮堂／會客廳舉行茶敘" data-price="1160" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>於禮堂／會客廳舉行茶敘</h3>
+            <p>儀式後最長 2 小時的茶敘交流。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">在一般價目表中查看<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$1,160</span></div>
+        </div>
+        <div class="option-item" data-id="incense" data-path="addon" data-name="香品套裝" data-price="250" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>香品套裝</h3>
+            <p>供傳統儀式使用的香品 — 任何希望加入的家庭皆可選用。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Buddhist incense/burning package</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-buddhist-incense-burning-package">在一般價目表中查看<span class="opt-sr" lang="en"> Buddhist incense/burning package</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$250</span></div>
+        </div>
+        <div class="option-item" data-id="food-cleanup" data-path="addon" data-name="餐飲清潔" data-price="250" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>餐飲清潔</h3>
+            <p>在現場設有餐飲的茶敘結束後進行清潔。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Food &amp; beverage cleanup fee</span> <span class="opt-gpl-price">$250</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#gpl-row-food-beverage-cleanup-fee">在一般價目表中查看<span class="opt-sr" lang="en"> Food &amp; beverage cleanup fee</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price">$250</span></div>
+        </div>
+        <div class="option-item" data-id="livestream" data-path="addon" data-name="網上直播" data-price="—" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>網上直播</h3>
+            <p>讓無法親身前來的家人也能一同參與。</p>
+          </div>
+          <div class="option-meta"><span class="price tbd">請向禮儀師查詢</span></div>
+        </div>
+        <div class="option-item" data-id="obituary" data-path="addon" data-name="報章訃告" data-price="—" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>報章訃告</h3>
+            <p>協助刊登訃告。</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>價目表詳情</summary><div class="opt-detail-body"><p class="opt-lead">以下為我們一般價目表的官方原文與價格，以英文顯示。</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">NEWSPAPER NOTICES: (SF Chronicle publisher’s discount passed to you)</span> <span class="opt-gpl-price">As Billed</span></div></div><a class="opt-gpl-link" href="../../zh/gpl.html#newspaper">在一般價目表中查看<span class="opt-sr" lang="en"> NEWSPAPER NOTICES: (SF Chronicle publisher’s discount passed to you)</span></a><p class="opt-only">一般價目表僅列出此項目及其價格。</p></div></details></div>
+          <div class="option-meta"><span class="price tbd">按實收費</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section class="screen" data-screen="review" aria-label="檢視">
+      <h2 id="review-title">您的選擇</h2>
+      <p class="subtitle" id="review-subtitle">以下是您目前的選擇。</p>
+      <div class="summary-box">
+        <div class="summary-path" id="summary-path">類別：尚未選擇</div>
+        <div class="summary-items" id="summary-items">
+          <div class="summary-empty">請在前面的畫面中選擇項目 — 選擇後會顯示於此。</div>
+        </div>
+        <div class="summary-total">
+          <span class="label">預估套裝總價</span>
+          <span class="amt" id="summary-total-amt">—</span>
+        </div>
+      </div>
+      <p class="disclaimer">價格取自 McAvoy O'Hara 一般價目表（GPL）範本，自 2026 年 9 月 1 日起生效，價格或會調整。除另有註明外，墓園、火化場、商品、代墊費用及稅項均另行計算。</p>
+      <p class="tr-note">翻譯審閱中</p>
+      <div class="cta-block">
+        <h3 id="review-cta-title">與禮儀師商談</h3>
+        <p id="review-cta-body">您的選擇只是起點 — 在與禮儀師一同確認之前，一切都不是最終決定。</p>
+        <ul class="cta-list" id="review-cta-list">
+          <li>提出您仍有的任何疑問</li>
+          <li>確認時間、地點及細節</li>
+          <li>我們會用心準備一切</li>
+        </ul>
+        <p class="cta-address">
+          Evergreen Mortuary of McAvoy O'Hara 長青殯儀館<br>
+          4545 Geary Boulevard, San Francisco, CA 94118<br>
+          <a href="tel:+14156680077" style="color:var(--sage-dark);font-weight:600;text-decoration:none;">(415) 668-0077</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <div class="total-bar">
+      <span class="sel-count" id="sel-count">已選擇 0 項</span>
+      <span>
+        <span class="total-label">套裝總價</span>
+        <span class="total-amt" id="running-total">—</span>
+      </span>
+    </div>
+    <div class="nav-row">
+      <button type="button" class="nav-btn ghost" id="btn-reset" title="重新開始">重設</button>
+      <button type="button" class="nav-btn" id="btn-back">返回</button>
+      <button type="button" class="nav-btn primary" id="btn-next">開始</button>
+    </div>
+  </footer>
+</div>
+
+<script src="../picker-i18n.js"></script>
+<script src="../app.js"></script>
+<script>
+  // Expose handlers used by inline onclick in markup
+  window.selectMode = selectMode;
+  window.selectPath = selectPath;
+  window.toggleGatherType = toggleGatherType;
+  window.toggleCremationType = toggleCremationType;
+  window.toggleNestOption = toggleNestOption;
+  window.toggleOption = toggleOption;
+  window.resumeSession = resumeSession;
+  window.startCremation = startCremation;
+  window.continueFromPreneedIntro = continueFromPreneedIntro;
+
+  // Language switcher: remember the choice (no automatic redirect by browser language)
+  document.querySelectorAll(".lang-switch a[data-lang]").forEach(a => a.addEventListener("click", () => {
+    try { localStorage.setItem("mcoh-lang", a.getAttribute("data-lang")); } catch (_) {}
+  }));
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const resume = document.getElementById("home-resume");
+    try {
+      const raw = sessionStorage.getItem("mcoh-picker-beta-v1");
+      if (raw && resume) {
+        const d = JSON.parse(raw);
+        if (d && (d.mode || d.path || (d.selected && d.selected.length))) {
+          resume.hidden = false;
+        }
+      }
+    } catch (_) {}
+  });
+</script>
+</body>
+</html>

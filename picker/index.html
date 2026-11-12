@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5a6e52">
+<title>Evergreen Mortuary of McAvoy O'Hara — Service Options (Beta)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <div class="beta-banner" role="status">Beta</div>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1 class="brand-name">Evergreen Mortuary</h1>
+      <div class="brand-sub">of McAvoy O&rsquo;Hara</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-switch" role="group" aria-label="Language"><a href="index.html" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a><span class="sep" aria-hidden="true">·</span><a href="zh/index.html" lang="zh-Hant" hreflang="zh-Hant" data-lang="zh">中文</a><span class="sep" aria-hidden="true">·</span><a href="es/index.html" lang="es" hreflang="es" data-lang="es">Español</a><span class="sep" aria-hidden="true">·</span><a href="ko/index.html" lang="ko" hreflang="ko" data-lang="ko">한국어</a><span class="sep" aria-hidden="true">·</span><a href="ru/index.html" lang="ru" hreflang="ru" data-lang="ru">Русский</a></div>
+      <span class="mode-badge" id="mode-badge" hidden></span>
+      <div class="step-pills" id="step-pills" aria-hidden="true">
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+        <span class="step-pill"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-body" id="app-body" tabindex="0">
+
+    <!-- HOME / LANDING -->
+    <section class="screen screen-home active" data-screen="home" aria-label="Welcome">
+      <div class="home-page">
+        <div class="home-hero">
+          <div class="home-leaf" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 6C20 6 8 14 8 24c0 6.627 5.373 10 12 10s12-3.373 12-10C32 14 20 6 20 6z" stroke="#5a6e52" stroke-width="1.5" fill="#e8efe4"/>
+              <path d="M20 16v18M20 22c-4 0-7 2-8 5M20 20c4 0 7 2 8 5" stroke="#5a6e52" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <p class="home-kicker">McAvoy O&rsquo;Hara Company · FD523</p>
+          <h2 class="home-title">We&rsquo;re here for you</h2>
+          <p class="home-tagline">
+            You don&rsquo;t have to do this alone — we&rsquo;ll guide you with a calm hand and a listening ear.
+          </p>
+          <div class="home-contact">
+            4545 Geary Boulevard, San Francisco, CA 94118<br>
+            <a href="tel:+14156680077">(415) 668-0077</a>
+            <span class="home-hours-inline"> · Available 24 hours a day</span>
+          </div>
+          <div class="home-divider" aria-hidden="true"></div>
+          <h2 class="home-cta-label">How can we help?</h2>
+          <div class="home-ctas home-ctas-primary" role="group" aria-label="Arrangement type">
+            <button type="button" class="mode-card" data-mode="at-need" onclick="selectMode('at-need', true)">
+              <div class="mode-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/></svg>
+              </div>
+              <h3>At-need</h3>
+              <p>A loved one has passed — we&rsquo;ll walk with you through the next steps.</p>
+              <span class="cta-arrow">Begin</span>
+            </button>
+            <button type="button" class="mode-card mode-card-preneed" data-mode="preneed" onclick="selectMode('preneed', true)">
+              <div class="mode-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h9l3 3v13H6z"/><path d="M14 4v4h4"/><path d="M8 12h8M8 16h6"/></svg>
+              </div>
+              <h3>Preneed contract</h3>
+              <p>Record your wishes at your own pace.</p>
+              <span class="cta-arrow">Start planning</span>
+            </button>
+          </div>
+          <button type="button" class="home-cremation-cta" onclick="startCremation()">
+            <span class="home-cremation-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9z"/></svg>
+            </span>
+            <span class="home-cremation-text">
+              <strong>Cremation</strong>
+              <span>Options and prices</span>
+            </span>
+            <span class="cta-arrow">See options</span>
+          </button>
+          <p class="home-trust">
+            Guided by your director · Sample GPL (Sept 1, 2026)
+          </p>
+          <div class="home-resume" id="home-resume" hidden>
+            <button type="button" onclick="resumeSession()">Continue where you left off</button>
+          </div>
+        </div>
+
+        <section class="home-history" aria-labelledby="history-heading">
+          <h2 id="history-heading">Our history</h2>
+          <div class="history-rule" aria-hidden="true"></div>
+          <div class="history-body">
+            <p>
+              McAvoy O&rsquo;Hara Company is among San Francisco&rsquo;s oldest funeral homes and one of California&rsquo;s oldest independent funeral businesses. It was established about 1850 as Flanigan &amp; Gallagher, later McAvoy &amp; Gallagher, and then McAvoy, O&rsquo;Hara &amp; Company.
+            </p>
+            <p>
+              We remain family-owned: today Richard O&rsquo;Hara and Dan O&rsquo;Hara III, third-generation funeral directors, carry on a tradition of personal, unhurried care.
+            </p>
+            <p>
+              The City has recognized our long service to the community, including commendation on our 150th anniversary.
+            </p>
+          </div>
+        </section>
+
+        <section class="home-contact-block" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Visit &amp; call</h2>
+          <div class="history-rule" aria-hidden="true"></div>
+          <div class="contact-grid">
+            <div>
+              <h3>Evergreen Mortuary</h3>
+              <p>4545 Geary Boulevard<br>San Francisco, CA 94118</p>
+              <p class="contact-phone"><a href="tel:+14156680077">(415) 668-0077</a></p>
+            </div>
+            <div>
+              <h3>Mortuary hours</h3>
+              <p>Open today for arrangements<br>9:00 am – 5:00 pm</p>
+              <p class="contact-note">McAvoy O&rsquo;Hara Company · FD523</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <!-- PRENEED INTRO / EDUCATE -->
+    <section class="screen" data-screen="preneed-intro" aria-label="About preneed">
+      <div class="preneed-intro">
+        <p class="preneed-kicker">Preneed contract</p>
+        <h2>Plan ahead — so your family isn’t left guessing</h2>
+        <p class="subtitle">When a death occurs, many permanent decisions must be made within a few hours. Families often say they aren’t sure what their loved one would have wanted. A preneed conversation lets you decide in an atmosphere of quiet consultation.</p>
+        <ul class="preneed-points">
+          <li><strong>Your wishes, known.</strong> Record your preferences — from chapel time to cremation — while there is time to think.</li>
+          <li><strong>Less confusion for family.</strong> Fewer hurried choices for the people who will arrange your services.</li>
+          <li><strong>One call when needed.</strong> A person you choose calls us; we follow the preferences you set.</li>
+        </ul>
+        <p class="preneed-note">Next you’ll choose the same service options as any arrangement. Your director will complete the preneed contract with you — nothing is final on this tablet alone.</p>
+        <button type="button" class="nav-btn primary preneed-continue" onclick="continueFromPreneedIntro()">Continue to service options</button>
+      </div>
+    </section>
+
+    <!-- PATH CHOOSER -->
+    <section class="screen" data-screen="path" aria-label="Choose a path">
+      <h2>Which path applies?</h2>
+      <p class="subtitle">Tap a card to select. You can change this later.</p>
+      <div class="path-grid">
+        <button type="button" class="path-card" data-path="gather" onclick="selectPath('gather')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><circle cx="14" cy="10" r="4"/><path d="M6 22c0-4 3.5-6 8-6s8 2 8 6"/><circle cx="22" cy="11" r="3"/><path d="M22 16c2.5.5 4 2 4 4"/><circle cx="6" cy="11" r="3"/><path d="M6 16c-2.5.5-4 2-4 4"/></svg>
+          </div>
+          <h3>Funeral, memorial, or visitation</h3>
+          <p>In our chapel or another location, including graveside.</p>
+          <div class="path-check">✓ Selected</div>
+        </button>
+        <button type="button" class="path-card" data-path="cremation" onclick="selectPath('cremation')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><path d="M6 20 L14 8 L22 20 Z"/><circle cx="14" cy="16" r="2"/></svg>
+          </div>
+          <h3>Cremation</h3>
+          <p>Direct cremation, with visitation or funeral service, witnessed cremation, or a memorial later.</p>
+          <div class="path-check">✓ Selected</div>
+        </button>
+        <button type="button" class="path-card" data-path="faraway" onclick="selectPath('faraway')">
+          <div class="path-icon">
+            <svg class="icon-svg" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9"/><path d="M5 14h18M14 5c3 3 3 15 0 18M14 5c-3 3-3 15 0 18"/></svg>
+          </div>
+          <h3>Receiving or forwarding remains</h3>
+          <p>Also includes shipping cremated remains.</p>
+          <div class="path-check">✓ Selected</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- PATH OPTIONS -->
+    <section class="screen" data-screen="options" aria-label="Path options">
+      <h2 id="options-title">Options</h2>
+      <p class="subtitle" id="options-subtitle">Choose what fits your family.</p>
+
+      <!-- GATHER -->
+      <div class="path-panel" data-path-panel="gather" id="opts-gather-wrap">
+        <div class="option-list compact" id="opts-gather">
+
+          <div class="option-block" data-gather-type="quiet">
+            <div class="option-item" data-id="gather-quiet" data-path="gather" data-group="gather-main" data-name="Visitation" data-price="1160" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Visitation</h3>
+                <div class="option-subtitle">Quiet Hour</div>
+                <p>Without a funeral or memorial service.</p>
+                <div class="includes-block">
+                  <div class="includes-heading">This charge includes:</div>
+                  <ul>
+                    <li>Use of facilities (chapel or drawing room) up to 2 hours</li>
+                    <li>Staff to open, attend, and close the visitation</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (First Hour) *</span> <span class="opt-gpl-price">$ 500</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-first-hour">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (First Hour) *</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., before 9PM)</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-befor">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., before 9PM)</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., after 9PM)</span> <span class="opt-gpl-price">$ 350</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-after">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., after 9PM)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+              <div class="option-meta"><span class="price" id="price-gather-quiet">From $500</span></div>
+            </div>
+            <div class="nested-panel" id="panel-quiet" aria-label="Visitation details">
+              <div class="nest-group">
+                <div class="nest-label">Use of facilities and staff</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="chapel-up-to-2hrs" data-group="quiet-duration" data-name="Facilities up to 2 hours" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Up to 2 hours</h4><p>Visitation in chapel or drawing room.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="chapel-first-hour" data-group="quiet-duration" data-name="Facilities — first hour" data-price="500" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>First hour</h4><p class="opt-plain">Use of our chapel or drawing room for the first hour.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (First Hour) *</span> <span class="opt-gpl-price">$ 500</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-first-hour">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (First Hour) *</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$500</div>
+                </div>
+                <div class="nest-option" data-id="chapel-add-hour" data-group="quiet-add" data-name="Facilities — added hour (before 9pm)" data-price="250" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Additional hour (before 9pm)</h4><p class="opt-plain">Use of our chapel or drawing room for each added hour before 9 PM.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Additional per hr., before 9PM)</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-additional-per-hr-befor">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Additional per hr., before 9PM)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$250</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="memorial">
+            <div class="option-item" data-id="gather-memorial" data-path="gather" data-group="gather-main" data-name="Memorial service" data-price="3020" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Memorial service</h3>
+                <p>With or without the remains present.</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">See on the General Price List<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-gather-memorial">From $1,150</span></div>
+            </div>
+            <div class="nested-panel" id="panel-memorial" aria-label="Memorial details">
+              <div class="nest-group">
+                <div class="nest-label">Options</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="pkg-memorial" data-group="memorial-where" data-name="Memorial service package" data-price="3020" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Memorial service package</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block">
+                      <div class="includes-heading">This package includes:</div>
+                      <ul>
+                        <li>Basic services for a memorial / direct care path</li>
+                        <li>Visitation (Quiet Hour) at our funeral home</li>
+                        <li>Memorial service — use of facilities and staff up to 2 hours</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">Includes everything in direct interment or cremation, plus the use of one of our chapels or drawing rooms, up to 2 hours, for a Quiet Hour, visiting or a memorial service. Final interment is scheduled at a separate time.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a></div></details></div>
+                  <div class="nest-meta">$3,020</div>
+                </div>
+                <div class="nest-option" data-id="memorial-chapel-ala" data-group="memorial-where" data-name="Memorial service (up to 2 hours)" data-price="1150" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Memorial service (facilities only)</h4>
+                    <div class="includes-block">
+                      <div class="includes-heading">This charge includes:</div>
+                      <ul>
+                        <li>Memorial service in parlor or chapel</li>
+                        <li>Use of facilities and staff up to 2 hours</li>
+                      </ul>
+                    </div>
+                  <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">See on the General Price List<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$1,150</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="funeral">
+            <div class="option-item" data-id="gather-funeral" data-path="gather" data-group="gather-main" data-name="Funeral service" data-price="—" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Funeral service</h3>
+                <p>With the remains present, in our chapel or at a church or other location.</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-chapel-church-funeral-service">See on the General Price List<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-gather-funeral">From $4,280</span></div>
+            </div>
+            <div class="nested-panel" id="panel-funeral" aria-label="Funeral details">
+              <div class="nest-group">
+                <div class="nest-label">Service style</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="style-mass" data-group="funeral-style" data-name="Funeral Mass" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Funeral Mass</h4><p>In our chapel or at your place of worship; we coordinate facilities and timing.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-funeral-svc" data-group="funeral-style" data-name="Funeral service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Funeral service</h4><p>Led by an officiant or celebrant, in our chapel or another location.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-memorial-svc" data-group="funeral-style" data-name="Memorial service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Memorial service</h4><p>A gathering using chapel or facilities time as arranged.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-procession" data-group="funeral-style" data-name="Procession with music" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Procession with music</h4><p>Add details under Procession &amp; transportation.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-simple" data-group="funeral-style" data-name="Simple funeral service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Simple funeral service</h4><p>Chapel or facilities time, without a formal procession.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">Where</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="pkg-funeral-evergreen" data-group="funeral-where" data-name="Funeral service at Evergreen Mortuary" data-price="4520" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Funeral service at Evergreen Mortuary</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block"><div class="includes-heading">This package includes:</div>
+                      <ul>
+                        <li>Visitation preceding the funeral service</li>
+                        <li>Use of facilities and staff</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">Our chapel or drawing room is available for visiting before the funeral service at our facility, up to 2 hours, with parking as available. This can be a traditional or non-traditional service, and visiting or a vigil may also be arranged for the morning, afternoon or evening.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,520</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-church" data-group="funeral-where" data-name="Funeral service at church or other location" data-price="4280" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Funeral service at church or other location</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block"><div class="includes-heading">This package includes:</div>
+                      <ul>
+                        <li>Funeral service at a church, cemetery, or other location</li>
+                        <li>Staff and equipment to coordinate and attend</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">We provide staff and preparation for visiting, vigil and funeral services at a local church, cemetery chapel or other location you select. Church time is up to 1 hour.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,280</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-chapel-church" data-group="funeral-where" data-name="Visitation and funeral service at church" data-price="4680" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Visitation and funeral service at church</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block"><div class="includes-heading">This package includes:</div>
+                      <ul>
+                        <li>Visitation at our funeral home beforehand</li>
+                        <li>Funeral service at church</li>
+                        <li>Use of facilities and staff for both</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">Use of a chapel or parlor for visiting before leaving for the funeral service at a church or hall, followed by committal services at the cemetery. Visiting or a vigil may be arranged for the morning, afternoon or evening.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-chapel-church-funeral-service">See on the General Price List<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,680</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">Procession &amp; transportation</div>
+                <div class="nest-hint">Choose any that apply. Escorts and music are arranged with your director.</div>
+                <div class="nest-option" data-id="procession-hearse" data-group="funeral-customs" data-name="Hearse / funeral coach" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Hearse / funeral coach</h4><p>To the church or cemetery.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Hearse for Funeral and, or Committal or Delivery</span> <span class="opt-gpl-price">$ 685</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-hearse-for-funeral-and-or-committal-or-deliv">See on the General Price List<span class="opt-sr" lang="en"> Hearse for Funeral and, or Committal or Delivery</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta tbd">As arranged</div>
+                </div>
+                <div class="nest-option" data-id="procession-band" data-group="funeral-customs" data-name="Walking or music procession" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Walking or music procession</h4><p>Short procession with musicians; we coordinate timing and route.</p></div>
+                  <div class="nest-meta tbd">Family-arranged</div>
+                </div>
+                <div class="nest-option" data-id="motorcycle-escorts" data-group="funeral-customs" data-name="Motorcycle escorts" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Motorcycle escorts</h4><p>For the procession.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Motorcycle Escorts - Minimum of 2 required (10 cars per Escort), billed at cost</span> <span class="opt-gpl-price">….</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-motorcycle-escorts-minimum-of-2-required-10-">See on the General Price List<span class="opt-sr" lang="en"> Motorcycle Escorts - Minimum of 2 required (10 cars per Escort), billed at cost</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta tbd">As billed</div>
+                </div>
+                <div class="nest-option" data-id="flower-car" data-group="funeral-customs" data-name="Flower car to cemetery" data-price="285" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Flower car to cemetery</h4><p>Accompanies the procession.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Floral car for scheduled delivery to the Cemetery</span> <span class="opt-gpl-price">$ 285</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-floral-car-for-scheduled-delivery-to-the-cem">See on the General Price List<span class="opt-sr" lang="en"> Floral car for scheduled delivery to the Cemetery</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$285</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">Before the funeral</div>
+                <div class="nest-option" id="nest-funeral-visiting" data-id="funeral-visiting" data-group="funeral-before" data-name="Visitation beforehand" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Visitation beforehand</h4><p>At our funeral home before the service. <span style="color:var(--text-muted)">Quiet Hour</span></p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta" id="meta-funeral-visiting">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="prep-viewing" data-group="funeral-before" data-name="Preparation for viewing / visitation" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Preparation for viewing / visitation</h4><p class="opt-plain">Cleansing and hairstyling, cosmetics, dressing and encasketing are included.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">See on the General Price List<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">After the funeral</div>
+                <div class="nest-option" data-id="committal-addon" data-group="funeral-after" data-name="Graveside service / committal after" data-price="625" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Graveside service / committal after</h4><p>Following the funeral service.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Committal Services or scheduled arrival for disposition</span> <span class="opt-gpl-price">$ 625</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-committal-services-or-scheduled-arrival-for-">See on the General Price List<span class="opt-sr" lang="en"> Committal Services or scheduled arrival for disposition</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$625</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-gather-type="graveside">
+            <div class="option-item" data-id="pkg-graveside" data-path="gather" data-group="gather-main" data-name="Graveside service / Committal" data-price="3580" onclick="toggleGatherType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Graveside service / Committal</h3>
+                <p>Also available for witness cremation — without a funeral service at our funeral home.</p>
+                <div class="includes-block">
+                  <div class="includes-heading">This package includes:</div>
+                  <ul>
+                    <li>Equipment and staff for graveside service or committal</li>
+                    <li>Coordination at the cemetery or place of disposition</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span> <span class="opt-gpl-price">$3,580</span></div><div class="opt-gpl-desc">This service provides for family and friends to meet at the Gravesite Committal Service at the selected cemetery, which includes the services provided under Direct Interment or Cremation.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-gravesite-committal-service-or-witness-crema">See on the General Price List<span class="opt-sr" lang="en"> GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$3,580</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREMATION -->
+      <div class="path-panel" data-path-panel="cremation">
+        <div class="option-list compact" id="opts-cremation">
+
+          <div class="option-block" data-cremation-type="direct">
+            <div class="option-item" data-id="direct-cremation" data-path="cremation" data-group="cremation-main" data-name="Direct cremation" data-price="1820" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Direct cremation</h3>
+                <p class="pkg-total-tag">Total package price</p>
+                <div class="includes-block">
+                  <div class="includes-heading">This package includes:</div>
+                  <ul>
+                    <li>Basic services of the funeral director and staff</li>
+                    <li>Transfer of remains (local, daytime)</li>
+                    <li>Care of remains as needed</li>
+                    <li>Necessary documents and authorizations</li>
+                  </ul>
+                </div>
+                <div class="hint">With cremation container from $1,945</div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT INTERMENT OR CREMATION:</span> <span class="opt-gpl-price">$ 1,820</span></div><div class="opt-gpl-desc">This service includes appropriate documents and authorizations, local daytime ambulance, care and limited preparation and general care of remains. If you want to arrange a direct cremation, you can use an alternative container. Alternative containers encase the body and can be made of materials like fiberboard or composition materials (with or without outside covering) the container we provide is of fiberboard. In addition, as above including container for cremation $1,945. Direct Interment including minimum burial container $2,820. Pacemaker removal additional cost.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-direct-interment-or-cremation">See on the General Price List<span class="opt-sr" lang="en"> DIRECT INTERMENT OR CREMATION:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$1,820</span></div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="visitation">
+            <div class="option-item" data-id="cremation-visitation" data-path="cremation" data-group="cremation-main" data-name="Cremation with visitation" data-price="—" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Cremation with visitation</h3>
+                <p>Visitation before cremation.</p>
+              </div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-cremation-visitation">From $3,670</span></div>
+            </div>
+            <div class="nested-panel" aria-label="Cremation with visitation details">
+              <div class="nest-group">
+                <div class="nest-label">Typical combination</div>
+                <div class="nest-hint">Selected by default — adjust with your director as needed.</div>
+                <div class="nest-option" data-id="crem-vis-prep" data-group="crem-vis-parts" data-name="Preparation for viewing / visitation" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Preparation for viewing / visitation</h4><p class="opt-plain">Cleansing and hairstyling, cosmetics, dressing and encasketing are included.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">See on the General Price List<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+                <div class="nest-option" data-id="crem-vis-hours" data-group="crem-vis-parts" data-name="Visitation — facilities up to 2 hours" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Visitation (up to 2 hours)</h4><p>Use of facilities and staff.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="crem-vis-direct" data-group="crem-vis-parts" data-name="Direct cremation" data-price="1820" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Direct cremation</h4><p>Cremation following visitation.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT INTERMENT OR CREMATION:</span> <span class="opt-gpl-price">$ 1,820</span></div><div class="opt-gpl-desc">This service includes appropriate documents and authorizations, local daytime ambulance, care and limited preparation and general care of remains. If you want to arrange a direct cremation, you can use an alternative container. Alternative containers encase the body and can be made of materials like fiberboard or composition materials (with or without outside covering) the container we provide is of fiberboard. In addition, as above including container for cremation $1,945. Direct Interment including minimum burial container $2,820. Pacemaker removal additional cost.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-direct-interment-or-cremation">See on the General Price List<span class="opt-sr" lang="en"> DIRECT INTERMENT OR CREMATION:</span></a></div></details></div>
+                  <div class="nest-meta">$1,820</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="funeral">
+            <div class="option-item" data-id="cremation-funeral" data-path="cremation" data-group="cremation-main" data-name="Cremation with funeral service" data-price="—" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Cremation with funeral service</h3>
+                <p>Service with the body present, then cremation. Choose a package below.</p>
+              </div>
+              <div class="option-meta"><span class="price parent-price-hint" id="price-cremation-funeral">From $4,280</span></div>
+            </div>
+            <div class="nested-panel" aria-label="Cremation with funeral details">
+              <div class="nest-group">
+                <div class="nest-label">Service style</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="style-mass" data-group="crem-funeral-style" data-name="Funeral Mass" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Funeral Mass</h4><p>In our chapel or at your place of worship; we coordinate facilities and timing.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-funeral-svc" data-group="crem-funeral-style" data-name="Funeral service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Funeral service</h4><p>Led by an officiant or celebrant, in our chapel or another location.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-memorial-svc" data-group="crem-funeral-style" data-name="Memorial service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Memorial service</h4><p>A gathering using chapel or facilities time as arranged.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+                <div class="nest-option" data-id="style-simple" data-group="crem-funeral-style" data-name="Simple funeral service" data-price="—" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body"><h4>Simple funeral service</h4><p>Chapel or facilities time, without a formal procession.</p></div>
+                  <div class="nest-meta tbd">Helps shape the arrangement</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">Where</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="pkg-funeral-evergreen" data-group="crem-funeral-where" data-name="Funeral service at Evergreen Mortuary" data-price="4520" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Funeral service at Evergreen Mortuary</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block"><div class="includes-heading">This package includes:</div>
+                      <ul><li>Visitation preceding the funeral service</li><li>Use of facilities and staff</li></ul>
+                    </div>
+                  <p class="opt-plain">Our chapel or drawing room is available for visiting before the funeral service at our facility, up to 2 hours, with parking as available. This can be a traditional or non-traditional service, and visiting or a vigil may also be arranged for the morning, afternoon or evening.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span> <span class="opt-gpl-price">$4,520</span></div><div class="opt-gpl-desc">With this traditional or non-traditional service, our chapel or drawing room will be available for visiting preceding funeral services at our facility with parking provided as available. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may also be arranged. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-services-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL SERVICES AT THE EVERGREEN MORTUARY*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,520</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-church" data-group="crem-funeral-where" data-name="Funeral service at church or other location" data-price="4280" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Funeral service at church or other location</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                  <p class="opt-plain">We provide staff and preparation for visiting, vigil and funeral services at a local church, cemetery chapel or other location you select. Church time is up to 1 hour.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span> <span class="opt-gpl-price">$4,280</span></div><div class="opt-gpl-desc">Available with this service selection are staff and preparation appropriate to visiting, vigil and funeral services held in a local church, cemetery chapel or other selected location. In addition, visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be also arranged. Church time up to 1 hour</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-funeral-visiting-at-church-cemetery-or-other">See on the General Price List<span class="opt-sr" lang="en"> FUNERAL &amp; VISITING AT CHURCH, CEMETERY OR OTHER LOCATION*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,280</div>
+                </div>
+                <div class="nest-option" data-id="pkg-funeral-chapel-church" data-group="crem-funeral-where" data-name="Visitation and funeral service at church" data-price="4680" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Visitation and funeral service at church</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                  <p class="opt-plain">Use of a chapel or parlor for visiting before leaving for the funeral service at a church or hall, followed by committal services at the cemetery. Visiting or a vigil may be arranged for the morning, afternoon or evening.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span> <span class="opt-gpl-price">$4,680</span></div><div class="opt-gpl-desc">This service provides the use of a chapel or parlor for visiting preceding the departure for the funeral services at church or hall followed by cemetery committal services. Visiting or a vigil in our chapel or drawing room for morning, afternoon or evening use may be arranged.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-chapel-church-funeral-service">See on the General Price List<span class="opt-sr" lang="en"> CHAPEL &amp; CHURCH FUNERAL SERVICE*:</span></a></div></details></div>
+                  <div class="nest-meta">$4,680</div>
+                </div>
+              </div>
+              <div class="nest-group">
+                <div class="nest-label">Before the funeral</div>
+                <div class="nest-option" id="nest-crem-funeral-visiting" data-id="funeral-visiting" data-group="funeral-before" data-name="Visitation beforehand" data-price="1160" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Visitation beforehand</h4><p>At our funeral home before the service.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$1,160</div>
+                </div>
+                <div class="nest-option" data-id="prep-viewing" data-group="funeral-before" data-name="Preparation for viewing / visitation" data-price="690" onclick="toggleNestOption(this, event)">
+                  <div class="nest-check">✓</div>
+                  <div class="nest-body"><h4>Preparation for viewing / visitation</h4><p class="opt-plain">Cleansing and hairstyling, cosmetics, dressing and encasketing are included.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Preparation for Viewing and, or Visiting.</span> <span class="opt-gpl-price">$ 690</span></div><div class="opt-gpl-desc">Includes cleansing and hairstyling, cosmetics, dressing and encasketing.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-preparation-for-viewing-and-or-visiting">See on the General Price List<span class="opt-sr" lang="en"> Preparation for Viewing and, or Visiting.</span></a></div></details></div>
+                  <div class="nest-meta">$690</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="witness">
+            <div class="option-item" data-id="witness-cremation" data-path="cremation" data-group="cremation-main" data-name="Witnessed cremation" data-price="3580" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Witnessed cremation</h3>
+                <p class="pkg-total-tag">Total package price</p>
+                <p>Without a funeral service at our funeral home.</p>
+                <div class="includes-block">
+                  <div class="includes-heading">This package includes:</div>
+                  <ul>
+                    <li>Equipment and staff for graveside service, committal, or witness cremation</li>
+                    <li>Coordination at the cemetery or place of disposition</li>
+                  </ul>
+                </div>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span> <span class="opt-gpl-price">$3,580</span></div><div class="opt-gpl-desc">This service provides for family and friends to meet at the Gravesite Committal Service at the selected cemetery, which includes the services provided under Direct Interment or Cremation.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-gravesite-committal-service-or-witness-crema">See on the General Price List<span class="opt-sr" lang="en"> GRAVESITE, COMMITTAL SERVICE OR WITNESS CREMATION*:</span></a></div></details></div>
+              <div class="option-meta"><span class="price">$3,580</span></div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="memorial">
+            <div class="option-item" data-id="cremation-memorial" data-path="cremation" data-group="cremation-main" data-name="Memorial service after cremation" data-price="1150" onclick="toggleCremationType(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Memorial service after cremation</h3>
+                <p>Held at a later date.</p>
+              <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">See on the General Price List<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a></div></details></div>
+              <div class="option-meta"><span class="price parent-price-hint">From $1,150</span></div>
+            </div>
+            <div class="nested-panel" aria-label="Memorial after cremation">
+              <div class="nest-group">
+                <div class="nest-label">Memorial options</div>
+                <div class="nest-hint">Choose one of the following:</div>
+                <div class="nest-option" data-id="memorial-after-pkg" data-group="crem-memorial-where" data-name="Memorial service package" data-price="3020" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Memorial service package</h4>
+                    <p class="pkg-total-tag">Total package price</p>
+                    <div class="includes-block"><div class="includes-heading">This package includes:</div>
+                      <ul>
+                        <li>Basic services for a memorial / direct care path</li>
+                        <li>Visitation (Quiet Hour) at our funeral home</li>
+                        <li>Memorial service — use of facilities and staff up to 2 hours</li>
+                      </ul>
+                    </div>
+                  <p class="opt-plain">Includes everything in direct interment or cremation, plus the use of one of our chapels or drawing rooms, up to 2 hours, for a Quiet Hour, visiting or a memorial service. Final interment is scheduled at a separate time.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span> <span class="opt-gpl-price">$3,020</span></div><div class="opt-gpl-desc">In addition to the services included in direct interment or cremation as described above, this selection includes the use of one of our chapels or drawing rooms for either a Quiet Hour, visiting or a Memorial Service, with final interment scheduled at a separate time. Chapel time up to 2 hours.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-memorial-service-at-the-evergreen-mortuary">See on the General Price List<span class="opt-sr" lang="en"> MEMORIAL SERVICE AT THE EVERGREEN MORTUARY:</span></a></div></details></div>
+                  <div class="nest-meta">$3,020</div>
+                </div>
+                <div class="nest-option" data-id="memorial-later" data-group="crem-memorial-where" data-name="Memorial service at a later date" data-price="1150" onclick="toggleNestOption(this, event)">
+                  <div class="nest-radio">✓</div>
+                  <div class="nest-body">
+                    <h4>Memorial service (facilities only)</h4>
+                    <p>Use of facilities and staff up to 2 hours.</p>
+                  <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">See on the General Price List<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+                  <div class="nest-meta">$1,150</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-block" data-cremation-type="ship">
+            <div class="option-item" data-id="ship-cremains" data-path="cremation" data-name="Shipping cremated remains (US)" data-price="250" onclick="toggleOption(this)">
+              <div class="check-box">✓</div>
+              <div class="option-content">
+                <h3>Shipping cremated remains (US)</h3>
+                <p>May be added to any cremation path.</p>
+              <p class="opt-plain">Shipping of cremated remains within the continental United States.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Shipping cremated remains, within continental United States</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-shipping-cremated-remains-within-continental">See on the General Price List<span class="opt-sr" lang="en"> Shipping cremated remains, within continental United States</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+              <div class="option-meta"><span class="price">$250</span></div>
+            </div>
+          </div>
+
+          <div class="option-item" data-id="private-id" data-path="cremation" data-name="Private identification" data-price="990" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Private identification</h3>
+              <p>Limited care plus use of facilities for the first hour for private identification before cremation.</p>
+              <div class="hint">Director confirms final arrangement</div>
+            </div>
+            <div class="option-meta"><span class="price">$990</span></div>
+          </div>
+
+          <div class="option-item" data-id="urn-selection" data-path="cremation" data-name="Urn selection" data-price="—" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Urn selection</h3>
+              <p>Merchandise priced separately.</p>
+            </div>
+            <div class="option-meta"><span class="price tbd">Ask director</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FARAWAY -->
+      <div class="path-panel" data-path-panel="faraway">
+        <div class="option-list" id="opts-faraway">
+          <div class="option-item" data-id="care-here" data-path="faraway" data-group="transfer-direction" data-name="Receiving remains" data-price="2000" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Receiving remains</h3>
+              <div class="includes-block">
+                <div class="includes-heading">This charge includes:</div>
+                <ul>
+                  <li>Receiving remains at our funeral home</li>
+                  <li>Basic services of the funeral director and staff</li>
+                  <li>Temporary care while arrangements are confirmed</li>
+                </ul>
+              </div>
+            <p class="opt-plain">Includes an ambulance to a receiving depot, our basic services, and limited care before services, interment or cremation. It does not include any unspecified services, the California permit filing fee, merchandise, or disposal of the outer shipping container.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">RECEIVING REMAINS:</span> <span class="opt-gpl-price">$ 2000</span></div><div class="opt-gpl-desc">Provides with this selection is an ambulance to receiving depot, in addition to basic services and limited care of the remains prior to services, interment or cremation, and not including any unspecified services, California Permit filing fee, merchandise or disposal of outer shipping container.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-receiving-remains">See on the General Price List<span class="opt-sr" lang="en"> RECEIVING REMAINS:</span></a></div></details></div>
+            <div class="option-meta"><span class="price">$2,000</span></div>
+          </div>
+          <div class="option-item" data-id="shipping" data-path="faraway" data-group="transfer-direction" data-name="Forwarding of remains" data-price="2980" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Forwarding of remains</h3>
+              <div class="includes-block">
+                <div class="includes-heading">This charge includes:</div>
+                <ul>
+                  <li>Basic services of the funeral director and staff for forwarding</li>
+                  <li>Local transfer and preparation for shipping</li>
+                  <li>Necessary authorizations and forms</li>
+                </ul>
+              </div>
+              <div class="hint">Shipping container / air tray not included</div>
+            <p class="opt-plain">Includes a local daytime ambulance, our professional services, preparation for transit, and local transport to the carrier’s terminal. It does not include the shipping container, air tray or any sales tax.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">DIRECT FORWARDING OF REMAINS:</span> <span class="opt-gpl-price">$2,980</span></div><div class="opt-gpl-desc">Provides for local daytime ambulance, professional services, preparation of remains for transit, and local transport to Carrier’s Terminal, and does not include the shipping container, air tray or any sales tax due.</div></div><a class="opt-gpl-link" href="../gpl.html#gpl-pkg-direct-forwarding-of-remains">See on the General Price List<span class="opt-sr" lang="en"> DIRECT FORWARDING OF REMAINS:</span></a></div></details></div>
+            <div class="option-meta"><span class="price">$2,980</span></div>
+          </div>
+          <div class="option-item" data-id="ship-cremains" data-path="faraway" data-name="Shipping cremated remains (US)" data-price="250" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Shipping cremated remains (US)</h3>
+            <p class="opt-plain">Shipping of cremated remains within the continental United States.</p><details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Shipping cremated remains, within continental United States</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-shipping-cremated-remains-within-continental">See on the General Price List<span class="opt-sr" lang="en"> Shipping cremated remains, within continental United States</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+            <div class="option-meta"><span class="price">$250</span></div>
+          </div>
+          <div class="option-item" data-id="distant-memorial" data-path="faraway" data-name="Memorial service at a later date" data-price="1150" onclick="toggleOption(this)">
+            <div class="check-box">✓</div>
+            <div class="option-content">
+              <h3>Memorial service at a later date</h3>
+              <p>Use of facilities and staff up to 2 hours.</p>
+            <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Memorial Service in our parlor or chapel (Up to 2 hrs.)</span> <span class="opt-gpl-price">$ 1,150</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-memorial-service-in-our-parlor-or-chapel-up-">See on the General Price List<span class="opt-sr" lang="en"> Memorial Service in our parlor or chapel (Up to 2 hrs.)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+            <div class="option-meta"><span class="price">$1,150</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD-ONS -->
+    <section class="screen" data-screen="addons" aria-label="Additional products">
+      <h2>Additional products &amp; services</h2>
+      <p class="subtitle">These can accompany any path. Choose what would make the day feel complete.</p>
+      <div class="option-list compact" id="opts-addons">
+        <div class="option-item" data-id="programs" data-path="addon" data-name="Register book" data-price="35" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Register book</h3>
+            <p>Guest register for the service.</p>
+            <div class="hint">Prayer cards from $6 / sheet of 8</div>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Register Book</span> <span class="opt-gpl-price">$35</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-register-book">See on the General Price List<span class="opt-sr" lang="en"> Register Book</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$35</span></div>
+        </div>
+        <div class="option-item" data-id="ack-cards" data-path="addon" data-name="Acknowledgment cards" data-price="35" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Acknowledgment cards</h3>
+            <p>Thank-you cards for kindness shown to your family.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Acknowledgment Cards (per boxes)</span> <span class="opt-gpl-price">$35</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-acknowledgment-cards-per-boxes">See on the General Price List<span class="opt-sr" lang="en"> Acknowledgment Cards (per boxes)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$35</span></div>
+        </div>
+        <div class="option-item" data-id="flower-car" data-path="addon" data-name="Flower car to cemetery" data-price="285" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Flower car to cemetery</h3>
+            <p>Floral car delivery to the cemetery; flowers are separate.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Floral car for scheduled delivery to the Cemetery</span> <span class="opt-gpl-price">$ 285</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-floral-car-for-scheduled-delivery-to-the-cem">See on the General Price List<span class="opt-sr" lang="en"> Floral car for scheduled delivery to the Cemetery</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$285</span></div>
+        </div>
+        <div class="option-item" data-id="reception" data-path="addon" data-name="Reception in chapel / drawing room" data-price="1160" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Reception in chapel / drawing room</h3>
+            <p>Up to 2 hours for coffee and conversation after the service.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Chapel or Drawing Rm. (Up to 2 hours)</span> <span class="opt-gpl-price">$ 1,160</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-chapel-or-drawing-rm-up-to-2-hours">See on the General Price List<span class="opt-sr" lang="en"> Chapel or Drawing Rm. (Up to 2 hours)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$1,160</span></div>
+        </div>
+        <div class="option-item" data-id="incense" data-path="addon" data-name="Incense package" data-price="250" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Incense package</h3>
+            <p>Incense for traditional observances — available for any family who wishes to include it.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Buddhist incense/burning package</span> <span class="opt-gpl-price">$ 250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-buddhist-incense-burning-package">See on the General Price List<span class="opt-sr" lang="en"> Buddhist incense/burning package</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$250</span></div>
+        </div>
+        <div class="option-item" data-id="food-cleanup" data-path="addon" data-name="Food & beverage cleanup" data-price="250" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Food &amp; beverage cleanup</h3>
+            <p>Cleanup after a reception with food and drink on site.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">Food &amp; beverage cleanup fee</span> <span class="opt-gpl-price">$250</span></div></div><a class="opt-gpl-link" href="../gpl.html#gpl-row-food-beverage-cleanup-fee">See on the General Price List<span class="opt-sr" lang="en"> Food &amp; beverage cleanup fee</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price">$250</span></div>
+        </div>
+        <div class="option-item" data-id="livestream" data-path="addon" data-name="Livestream" data-price="—" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Livestream</h3>
+            <p>So family who can't travel can still be present.</p>
+          </div>
+          <div class="option-meta"><span class="price tbd">Ask director</span></div>
+        </div>
+        <div class="option-item" data-id="obituary" data-path="addon" data-name="Newspaper notices" data-price="—" onclick="toggleOption(this)">
+          <div class="check-box">✓</div>
+          <div class="option-content">
+            <h3>Newspaper notices</h3>
+            <p>Help placing an obituary.</p>
+          <details class="opt-detail" onclick="event.stopPropagation()"><summary>Price list details</summary><div class="opt-detail-body"><p class="opt-lead">Official wording and price from our General Price List, shown in English.</p><div class="opt-gpl-item" lang="en"><div class="opt-gpl-name"><span class="opt-gpl-t">NEWSPAPER NOTICES: (SF Chronicle publisher’s discount passed to you)</span> <span class="opt-gpl-price">As Billed</span></div></div><a class="opt-gpl-link" href="../gpl.html#newspaper">See on the General Price List<span class="opt-sr" lang="en"> NEWSPAPER NOTICES: (SF Chronicle publisher’s discount passed to you)</span></a><p class="opt-only">The General Price List lists this item and its price only.</p></div></details></div>
+          <div class="option-meta"><span class="price tbd">As billed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section class="screen" data-screen="review" aria-label="Review">
+      <h2 id="review-title">Your choices</h2>
+      <p class="subtitle" id="review-subtitle">Here's what you've selected so far.</p>
+      <div class="summary-box">
+        <div class="summary-path" id="summary-path">Path: Not yet chosen</div>
+        <div class="summary-items" id="summary-items">
+          <div class="summary-empty">Select options on earlier screens — they'll appear here.</div>
+        </div>
+        <div class="summary-total">
+          <span class="label">Estimated total package price</span>
+          <span class="amt" id="summary-total-amt">—</span>
+        </div>
+      </div>
+      <p class="disclaimer">Prices from McAvoy O'Hara Sample GPL, effective Sept 1, 2026. Subject to change. Cemetery, crematory, merchandise, cash advances, and taxes are separate unless noted.</p>
+      <div class="cta-block">
+        <h3 id="review-cta-title">Talk with your director</h3>
+        <p id="review-cta-body">Your selections are a starting point — nothing is final until you review them together.</p>
+        <ul class="cta-list" id="review-cta-list">
+          <li>Ask any questions you still have</li>
+          <li>Confirm timing, location, and details</li>
+          <li>We'll prepare everything with care</li>
+        </ul>
+        <p class="cta-address">
+          Evergreen Mortuary of McAvoy O'Hara<br>
+          4545 Geary Boulevard, San Francisco, CA 94118<br>
+          <a href="tel:+14156680077" style="color:var(--sage-dark);font-weight:600;text-decoration:none;">(415) 668-0077</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <div class="total-bar">
+      <span class="sel-count" id="sel-count">0 items selected</span>
+      <span>
+        <span class="total-label">Total package price</span>
+        <span class="total-amt" id="running-total">—</span>
+      </span>
+    </div>
+    <div class="nav-row">
+      <button type="button" class="nav-btn ghost" id="btn-reset" title="Start over">Reset</button>
+      <button type="button" class="nav-btn" id="btn-back">Back</button>
+      <button type="button" class="nav-btn primary" id="btn-next">Begin</button>
+    </div>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+<script>
+  // Expose handlers used by inline onclick in markup
+  window.selectMode = selectMode;
+  window.selectPath = selectPath;
+  window.toggleGatherType = toggleGatherType;
+  window.toggleCremationType = toggleCremationType;
+  window.toggleNestOption = toggleNestOption;
+  window.toggleOption = toggleOption;
+  window.resumeSession = resumeSession;
+  window.startCremation = startCremation;
+  window.continueFromPreneedIntro = continueFromPreneedIntro;
+
+  // Language switcher: remember the choice (no automatic redirect by browser language)
+  document.querySelectorAll(".lang-switch a[data-lang]").forEach(a => a.addEventListener("click", () => {
+    try { localStorage.setItem("mcoh-lang", a.getAttribute("data-lang")); } catch (_) {}
+  }));
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const resume = document.getElementById("home-resume");
+    try {
+      const raw = sessionStorage.getItem("mcoh-picker-beta-v1");
+      if (raw && resume) {
+        const d = JSON.parse(raw);
+        if (d && (d.mode || d.path || (d.selected && d.selected.length))) {
+          resume.hidden = false;
+        }
+      }
+    } catch (_) {}
+  });
+</script>
+</body>
+</html>
