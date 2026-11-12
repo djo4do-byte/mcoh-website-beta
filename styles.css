@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
 /* McAvoy O’Hara — Website BETA · evergreen blueprint + cream panels */
 :root{
   --sage:#7a8f72; --sage-dark:#4f6448; --sage-light:#a8b8a0; --sage-pale:#e8efe4; --sage-mid:#c5d4bc;
@@ -5,8 +6,8 @@
   --cream:#f7f3eb; --ivory:#faf8f4; --warm-white:#fffdf9;
   --text:#2c3328; --text-soft:#4d5648; --text-muted:#646e5c;
   --border:#d4ddd0; --gold:#b8a078; --gold-soft:#c9b896;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --serif:Georgia,"Times New Roman",Times,serif;
+  --sans:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
   --radius:14px; --shadow:0 18px 50px rgba(10,28,18,.28),0 2px 8px rgba(10,28,18,.12);
   --header-h:72px;
 }
@@ -289,8 +290,8 @@ html{scroll-padding-top:calc(var(--header-h) + var(--lang-h) + 16px)}
   .main-nav .nav-lang a{display:inline-block;padding:8px 14px;border-bottom:0;border-radius:999px;font-size:1rem}
 }
 /* CJK fallbacks so Traditional Chinese renders with a matching serif / sans */
-html[lang="zh-Hant"]{--serif:Georgia,"Times New Roman",Times,"Liberation Serif","Noto Serif CJK TC","Noto Serif TC","Songti TC","PMingLiU",serif;
-  --sans:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans CJK TC","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+html[lang="zh-Hant"]{--serif:"EB Garamond",Georgia,"Times New Roman",Times,"Liberation Serif","Noto Serif CJK TC","Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Source Serif 4",Georgia,"Noto Sans CJK TC","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 html[lang="zh-Hant"] .kicker,html[lang="zh-Hant"] .footer-h{letter-spacing:.08em}
 html[lang="es"] .main-nav a{white-space:nowrap}
 @media (min-width:901px) and (max-width:1180px){ html[lang="es"] .main-nav a{padding:8px 7px;font-size:.82rem} html[lang="es"] .logo-sub{display:none} }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
 :root {
   --sage: #7a8f72;
   --sage-dark: #5a6e52;
@@ -28,7 +29,7 @@ html, body {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
   background: var(--cream);
   color: var(--text);
   overflow: hidden;
@@ -50,7 +51,7 @@ body {
   background: var(--sage-dark);
   color: var(--warm-white);
   text-align: center;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -81,7 +82,7 @@ body {
 }
 
 .brand-sub {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   color: var(--text-muted);
   letter-spacing: 0.03em;
@@ -159,7 +160,7 @@ h3 {
 }
 
 .subtitle {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.5;
@@ -167,14 +168,14 @@ h3 {
 }
 
 .body-text {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.55;
 }
 
 .price {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--sage-dark);
@@ -208,7 +209,7 @@ h3 {
 .welcome-hero .leaf { margin-bottom: 14px; opacity: 0.75; }
 
 .welcome-hero .tagline {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 1.25rem;
   color: var(--text-soft);
   font-style: italic;
@@ -217,7 +218,7 @@ h3 {
 }
 
 .welcome-hero .address {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.6;
@@ -250,7 +251,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   margin: 0 auto 12px;
@@ -259,7 +260,7 @@ h3 {
 .step-card h3 { font-size: var(--fs-body); margin-bottom: 6px; }
 
 .step-card p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.4;
@@ -335,7 +336,7 @@ h3 {
 }
 
 .path-card p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.45;
@@ -344,7 +345,7 @@ h3 {
 .path-check {
   margin-top: auto;
   padding-top: 12px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--sage);
   font-weight: 600;
@@ -418,7 +419,7 @@ h3 {
 .option-content h3 { font-size: 1.1875rem; margin-bottom: 4px; }
 
 .option-subtitle {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   font-style: italic;
@@ -426,14 +427,14 @@ h3 {
 }
 
 .option-content p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.4;
 }
 
 .option-content .hint {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   color: var(--text-muted);
   margin-top: 4px;
@@ -484,7 +485,7 @@ h3 {
 .nest-group:last-child { margin-bottom: 0; }
 
 .nest-label {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -494,7 +495,7 @@ h3 {
 }
 
 .nest-hint {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   color: var(--text-muted);
   margin: -2px 0 8px;
@@ -579,7 +580,7 @@ h3 {
 }
 
 .nest-body p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.35;
@@ -587,7 +588,7 @@ h3 {
 }
 
 .nest-meta {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--sage-dark);
@@ -606,7 +607,7 @@ h3 {
 .nest-meta.tbd { color: var(--text-muted); font-weight: 500; }
 
 .parent-price-hint {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   font-weight: 500;
@@ -614,7 +615,7 @@ h3 {
 
 .includes-block {
   margin-top: 6px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .includes-block .includes-heading {
@@ -648,7 +649,7 @@ h3 {
 }
 
 .pkg-total-tag {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -671,7 +672,7 @@ h3 {
 .summary-path {
   background: var(--sage-pale);
   padding: 14px 18px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--sage-dark);
   font-weight: 600;
@@ -690,7 +691,7 @@ h3 {
   align-items: flex-start;
   gap: 12px;
   padding: 10px 18px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   border-bottom: 1px solid #f0ebe3;
 }
@@ -705,7 +706,7 @@ h3 {
 .summary-empty {
   padding: 32px 18px;
   text-align: center;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
 }
@@ -717,7 +718,7 @@ h3 {
   padding: 16px 18px;
   background: var(--cream);
   border-top: 2px solid var(--border);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .summary-total .label {
@@ -733,7 +734,7 @@ h3 {
 }
 
 .summary-section-label {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--sage-dark);
@@ -760,7 +761,7 @@ h3 {
 
 .disclaimer {
   margin-top: 12px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.45;
@@ -768,7 +769,7 @@ h3 {
 
 .handoff-note {
   margin-top: 14px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   text-align: center;
@@ -791,7 +792,7 @@ h3 {
 }
 
 .cta-block p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.45;
@@ -802,7 +803,7 @@ h3 {
   text-align: left;
   max-width: 400px;
   margin: 0 auto 16px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .cta-list li {
@@ -826,7 +827,7 @@ h3 {
 .cta-list li:last-child { border-bottom: none; }
 
 .cta-address {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.55;
@@ -850,7 +851,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .total-bar .sel-count {
@@ -877,7 +878,7 @@ h3 {
 }
 
 .nav-btn {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   min-height: var(--tap);
@@ -988,7 +989,7 @@ h3 {
 }
 
 .home-kicker {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1013,7 +1014,7 @@ h3 {
 }
 
 .home-tagline {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 1.1875rem;
   color: var(--text-soft);
   line-height: 1.55;
@@ -1022,7 +1023,7 @@ h3 {
 }
 
 .home-contact {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.65;
@@ -1046,7 +1047,7 @@ h3 {
 }
 
 .home-cta-label {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 500;
   color: var(--text-soft);
@@ -1128,7 +1129,7 @@ h3 {
 }
 
 .mode-card p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.45;
@@ -1137,7 +1138,7 @@ h3 {
 }
 
 .mode-card .cta-arrow {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--warm-white);
@@ -1159,7 +1160,7 @@ h3 {
 }
 
 .home-chip {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--sage-dark);
@@ -1177,7 +1178,7 @@ h3 {
 
 .home-trust {
   margin-top: 20px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.5;
@@ -1186,7 +1187,7 @@ h3 {
 
 .home-resume {
   margin-top: 16px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .home-resume button {
@@ -1203,7 +1204,7 @@ h3 {
 }
 
 .mode-badge {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1297,7 +1298,7 @@ h3 {
 }
 
 .home-cremation-text span {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.4;
@@ -1305,7 +1306,7 @@ h3 {
 
 .home-cremation-cta .cta-arrow {
   flex-shrink: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--sage-dark);
@@ -1324,7 +1325,7 @@ h3 {
 }
 
 .preneed-kicker {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1348,7 +1349,7 @@ h3 {
 }
 
 .preneed-points li {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.55;
@@ -1365,7 +1366,7 @@ h3 {
 }
 
 .preneed-note {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.55;
@@ -1405,7 +1406,7 @@ h3 {
 }
 
 .history-body p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.6;
@@ -1435,7 +1436,7 @@ h3 {
 }
 
 .contact-grid p {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: var(--fs-body);
   color: var(--text-soft);
   line-height: 1.55;
@@ -1473,12 +1474,12 @@ h3 {
 }
 
 /* —— Language switcher (English · 中文 · Español) —— */
-.lang-switch { display: flex; align-items: center; gap: 2px; font-family: system-ui, -apple-system, sans-serif; font-size: var(--fs-body); color: var(--text-muted); flex-shrink: 0; }
+.lang-switch { display: flex; align-items: center; gap: 2px; font-family: "Source Serif 4", Georgia, serif; font-size: var(--fs-body); color: var(--text-muted); flex-shrink: 0; }
 .lang-switch a { color: var(--sage-dark); text-decoration: none; padding: 6px 9px; border-radius: 999px; min-height: 32px; display: inline-flex; align-items: center; }
 .lang-switch a:hover { background: var(--sage-pale); }
 .lang-switch a[aria-current] { background: var(--sage-dark); color: var(--warm-white); font-weight: 700; }
 .lang-switch .sep { opacity: .6; }
-.tr-note { font-family: system-ui, -apple-system, sans-serif; font-size: 0.875rem; font-style: italic; color: var(--text-muted); text-align: center; margin-top: 6px; }
+.tr-note { font-family: "Source Serif 4", Georgia, serif; font-size: 0.875rem; font-style: italic; color: var(--text-muted); text-align: center; margin-top: 6px; }
 @media (max-width: 560px) {
   .app-header { flex-wrap: wrap; }
   .lang-switch { font-size: 0.875rem; }
@@ -1582,7 +1583,7 @@ html[lang="ru"] .eyebrow, html[lang="ru"] .home-kicker, html[lang="ru"] .section
 /* —— Accessibility pass (build_picker_i18n.py) —— */
 :root { --fs-body: 1.0625rem; --text-muted: #5b6653; --text-soft: #4b5446; }
 @media (max-width: 700px) { :root { --fs-body: 1.125rem; } }
-h2.home-cta-label { font-family: system-ui, -apple-system, sans-serif; font-size: var(--fs-body); font-weight: 500; color: var(--text-soft); line-height: 1.5; margin-bottom: 14px; letter-spacing: .01em; }
+h2.home-cta-label { font-family: "Source Serif 4", Georgia, serif; font-size: var(--fs-body); font-weight: 500; color: var(--text-soft); line-height: 1.5; margin-bottom: 14px; letter-spacing: .01em; }
 .path-check, .home-kicker, .home-brand-line, .preneed-kicker, .nest-meta.included-tag { color: var(--sage-dark); }
 /* language links: 44px tall tap targets */
 .lang-switch { font-size: 0.9375rem; }
