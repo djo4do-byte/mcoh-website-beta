@@ -1,5 +1,5 @@
 /* McAvoy O'Hara service picker — beta app
-   Sample GPL prices effective Sept 1, 2026. Offline; sessionStorage persistence. */
+   Prices from General Price List v4 (Nov 2026 working copy). Offline; sessionStorage persistence. */
 
 /* —— i18n: page language comes from <html lang>; English strings are the keys. ——
    Prices/numbers are never translated. Dictionaries: picker-i18n.js (window.MCOH_PICKER_I18N). */
@@ -21,7 +21,7 @@ const PRICES = {
   "pkg-funeral-church": 4280,
   "pkg-funeral-chapel-church": 4680,
   "pkg-graveside": 3580,
-  "chapel-first-hour": 500,
+  "chapel-first-hour": 380, /* GPL v4: “Quiet Hour” — Drawing Room */
   "chapel-add-hour": 250,
   "chapel-add-hour-late": 350,
   "chapel-up-to-2hrs": 1160,
@@ -36,7 +36,7 @@ const PRICES = {
   "funeral-visiting": 1160,
   "prep-viewing": 690,
   "committal-addon": 625,
-  "private-id": 990,
+  "private-id": null, /* was 490 + first-hour 500; first-hour rate not on GPL v4 */
   "direct-cremation": 1820,
   "cremation-visitation": null,
   "cremation-funeral": null,
@@ -49,12 +49,12 @@ const PRICES = {
   "shipping": 2980,
   "ship-cremains": 250,
   "distant-memorial": 1150,
-  "programs": 35,
-  "ack-cards": 35,
+  "programs": 66, /* GPL v4 combined register book / cards line */
+  "ack-cards": null,
   "flower-car": 285,
   "reception": 1160,
-  "incense": 250,
-  "food-cleanup": 250,
+  "incense": 200,
+  "food-cleanup": 125,
   "livestream": null,
   "obituary": null,
   "crem-vis-prep": 690,
@@ -63,7 +63,8 @@ const PRICES = {
 };
 
 const PRICE_LABELS = {
-  "gather-quiet": T("From $500"),
+  "gather-quiet": T("From $380"),
+  "private-id": T("Ask director"),
   "gather-memorial": T("From $1,150"),
   "gather-funeral": T("From $4,280"),
   "cremation-visitation": T("From $3,670"),
@@ -242,10 +243,10 @@ function updateParentPriceHints() {
   if (q) {
     if (state.selected.has("chapel-up-to-2hrs")) q.textContent = "$1,160";
     else if (state.selected.has("chapel-first-hour")) {
-      let t = 500;
+      let t = 380;
       if (state.selected.has("chapel-add-hour")) t += 250;
       q.textContent = "$" + t.toLocaleString("en-US");
-    } else q.textContent = T("From $500");
+    } else q.textContent = T("From $380");
   }
   const m = $("#price-gather-memorial");
   if (m) {
@@ -272,7 +273,7 @@ function updateParentPriceHints() {
       if (state.selected.has("crem-vis-prep") || state.selected.has("prep-viewing")) parts.push(690);
       if (state.selected.has("crem-vis-hours") || state.selected.has("chapel-up-to-2hrs")) parts.push(1160);
       else if (state.selected.has("chapel-first-hour")) {
-        parts.push(500);
+        parts.push(380);
         if (state.selected.has("chapel-add-hour")) parts.push(250);
       }
       if (state.selected.has("crem-vis-direct") || state.selected.has("direct-cremation")) parts.push(1820);
@@ -600,7 +601,7 @@ function updateSummary() {
         if (state.selected.has(nid) && typeof PRICES[nid] === "number") { sum += PRICES[nid]; any = true; }
       });
       packageItems.push('<div class="summary-item"><span class="label">' + T("Visitation") + '<span class="pkg-sub">' + T("This charge") + '</span></span><span class="amt">' +
-        (any ? formatPrice(sum) : T("From $500")) + "</span></div>");
+        (any ? formatPrice(sum) : T("From $380")) + "</span></div>");
     } else if (pid === "pkg-graveside") {
       pushPkg(nameOf("pkg-graveside"), formatPrice(3580));
     }
