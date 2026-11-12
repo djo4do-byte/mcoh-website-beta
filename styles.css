@@ -643,3 +643,7 @@ body{background:#eef2ea}
 .home-hero .hero-panel{border-left-color:rgba(31,61,43,.16)}
 .call-panel{background:linear-gradient(180deg,#fffdf9,#edf4eb)}
 /* <<< end generated block <<< */
+/* Box titles: clearly larger than the text beneath (Garamond runs small) */
+h3,.card h3,.card-h,.panel h3{font-size:1.5rem!important;font-weight:600;line-height:1.25}
+@media (max-width:700px){h3,.card h3,.card-h,.panel h3{font-size:1.45rem!important}}
+html[lang="ko"] h3,html[lang="ko"] .card-h{font-size:1.35rem!important}
