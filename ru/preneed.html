@@ -53,10 +53,10 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Здравствуйте, я хотел(а) бы спланировать заранее. Запрос: {date}, {time}. Меня зовут:" data-label-days="Выберите день" data-need-selection="Сначала выберите день и время.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Здравствуйте, я хотел(а) бы спланировать заранее. Запрос: {date}, {time}, {place}. Меня зовут:" data-label-days="Выберите день" data-need-selection="Сначала выберите день, время и место встречи.">
     <h2 id="plan-ahead-h">Планируйте заранее — по сегодняшним ценам</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">Выберите день для встречи.</p>
+    <p class="lede plan-ahead-sub">Бесплатно и без обязательств. Встреча в нашей часовне или по телефону.</p>
     <div class="plan-ahead-picker">
       <div class="plan-ahead-days" role="group" aria-label="Выберите день"></div>
       <div class="plan-ahead-times" role="group" aria-label="Выберите время суток">
@@ -64,9 +64,13 @@
         <button type="button" class="btn plan-choice" data-time="midday" data-time-label="полдень" aria-pressed="false">Полдень</button>
         <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="после обеда" aria-pressed="false">После обеда</button>
       </div>
+      <div class="plan-ahead-places" role="group" aria-label="Выберите место встречи">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="в часовне" aria-pressed="false">Часовня</button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="по телефону" aria-pressed="false">Телефон</button>
+      </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
       <p class="plan-ahead-note">Это запрос. Мы подтвердим время с вами.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Запросить это время</span></a>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Записаться на бесплатную консультацию</span></a>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">Предпочитаете позвонить? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
     </div>
     <div class="plan-ahead-fallback">

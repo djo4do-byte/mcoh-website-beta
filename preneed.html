@@ -53,10 +53,10 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hi, I'd like to plan ahead. Requested: {date}, {time}. My name:" data-label-days="Choose a day" data-need-selection="Select a day and a time first.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. My name:" data-label-days="Choose a day" data-need-selection="Select a day, a time, and where to meet first.">
     <h2 id="plan-ahead-h">Plan ahead, pay today’s prices</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">Pick a day to meet with us.</p>
+    <p class="lede plan-ahead-sub">No cost, no obligation. Meet at our chapel or by phone.</p>
     <div class="plan-ahead-picker">
       <div class="plan-ahead-days" role="group" aria-label="Choose a day"></div>
       <div class="plan-ahead-times" role="group" aria-label="Choose a time of day">
@@ -64,9 +64,13 @@
         <button type="button" class="btn plan-choice" data-time="midday" data-time-label="midday" aria-pressed="false">Midday</button>
         <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="afternoon" aria-pressed="false">Afternoon</button>
       </div>
+      <div class="plan-ahead-places" role="group" aria-label="Choose where to meet">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="at the chapel" aria-pressed="false">Chapel</button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="by phone" aria-pressed="false">Phone</button>
+      </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
       <p class="plan-ahead-note">This is a request. We’ll confirm the time with you.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Request this time</span></a>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Book a free planning visit</span></a>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">Prefer to call? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
     </div>
     <div class="plan-ahead-fallback">

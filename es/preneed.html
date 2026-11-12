@@ -53,10 +53,10 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hola, me gustaría planificar con anticipación. Solicito: {date}, {time}. Mi nombre:" data-label-days="Elija un día" data-need-selection="Primero elija un día y un horario.">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="Hola, me gustaría planificar con anticipación. Solicito: {date}, {time}, {place}. Mi nombre:" data-label-days="Elija un día" data-need-selection="Primero elija un día, un horario y el lugar de la reunión.">
     <h2 id="plan-ahead-h">Planifique con anticipación, pague los precios de hoy</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">Elija un día para reunirse con nosotros.</p>
+    <p class="lede plan-ahead-sub">Sin costo y sin compromiso. Nos reunimos en nuestra capilla o por teléfono.</p>
     <div class="plan-ahead-picker">
       <div class="plan-ahead-days" role="group" aria-label="Elija un día"></div>
       <div class="plan-ahead-times" role="group" aria-label="Elija un horario">
@@ -64,9 +64,13 @@
         <button type="button" class="btn plan-choice" data-time="midday" data-time-label="al mediodía" aria-pressed="false">Mediodía</button>
         <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="por la tarde" aria-pressed="false">Tarde</button>
       </div>
+      <div class="plan-ahead-places" role="group" aria-label="Elija dónde reunirse">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="en la capilla" aria-pressed="false">Capilla</button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="por teléfono" aria-pressed="false">Teléfono</button>
+      </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
       <p class="plan-ahead-note">Esta es una solicitud. Confirmaremos la hora con usted.</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Solicitar esta hora</span></a>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">Reserve una visita de planificación gratuita</span></a>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">¿Prefiere llamar? <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
     </div>
     <div class="plan-ahead-fallback">

@@ -64,15 +64,16 @@
     if(!box) return;
     var daysBox=box.querySelector('.plan-ahead-days');
     var timeBtns=[].slice.call(box.querySelectorAll('.plan-ahead-times .plan-choice'));
+    var placeBtns=[].slice.call(box.querySelectorAll('.plan-ahead-places .plan-choice'));
     var confirm=box.querySelector('[data-plan-confirm]');
     var status=box.querySelector('[data-plan-status]');
-    if(!daysBox||!confirm||!timeBtns.length) return;
+    if(!daysBox||!confirm||!timeBtns.length||!placeBtns.length) return;
 
     var lang=document.documentElement.getAttribute('lang')||'en';
     var phone=box.getAttribute('data-sms-phone')||'+14156680077';
-    var template=box.getAttribute('data-sms-template')||"Hi, I'd like to plan ahead. Requested: {date}, {time}. My name:";
+    var template=box.getAttribute('data-sms-template')||"Hi, I'd like to plan ahead. Requested: {date}, {time}, {place}. My name:";
     var daysLabel=box.getAttribute('data-label-days')||'Choose a day';
-    var needSel=box.getAttribute('data-need-selection')||'Select a day and a time first.';
+    var needSel=box.getAttribute('data-need-selection')||'Select a day, a time, and where to meet first.';
 
     var shortWd, shortMd, longFmt;
     try{
@@ -119,13 +120,13 @@
     }
     var dayBtns=[].slice.call(daysBox.querySelectorAll('.plan-choice'));
 
-    var selectedDay=null, selectedTime=null;
+    var selectedDay=null, selectedTime=null, selectedPlace=null;
     function updateConfirm(){
-      if(selectedDay&&selectedTime){
-        var body=template.replace('{date}',selectedDay).replace('{time}',selectedTime);
+      if(selectedDay&&selectedTime&&selectedPlace){
+        var body=template.replace('{date}',selectedDay).replace('{time}',selectedTime).replace('{place}',selectedPlace);
         confirm.setAttribute('href',smsHref(body));
         confirm.setAttribute('aria-disabled','false');
-        if(status) status.textContent=selectedDay+', '+selectedTime;
+        if(status) status.textContent=selectedDay+', '+selectedTime+', '+selectedPlace;
       }else{
         confirm.setAttribute('href','#');
         confirm.setAttribute('aria-disabled','true');
@@ -148,12 +149,20 @@
         updateConfirm();
       });
     });
+    placeBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        press(placeBtns,btn);
+        selectedPlace=btn.getAttribute('data-place-label');
+        updateConfirm();
+      });
+    });
     confirm.addEventListener('click',function(e){
       if(confirm.getAttribute('aria-disabled')==='true'){
         e.preventDefault();
         if(status) status.textContent=needSel;
         if(!selectedDay&&dayBtns[0]) dayBtns[0].focus();
         else if(!selectedTime&&timeBtns[0]) timeBtns[0].focus();
+        else if(!selectedPlace&&placeBtns[0]) placeBtns[0].focus();
       }
     });
     updateConfirm();

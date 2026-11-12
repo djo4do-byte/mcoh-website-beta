@@ -53,10 +53,10 @@
   </div>
 </section>
 <div class="wrap stack">
-  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="您好，我想預先規劃。希望預約：{date}，{time}。我的姓名：" data-label-days="選擇日期" data-need-selection="請先選擇日期和時段。">
+  <section class="panel reveal plan-ahead" id="plan-ahead" aria-labelledby="plan-ahead-h" data-plan-ahead data-sms-phone="+14156680077" data-sms-template="您好，我想預先規劃。希望預約：{date}，{time}，{place}。我的姓名：" data-label-days="選擇日期" data-need-selection="請先選擇日期、時段和會面地點。">
     <h2 id="plan-ahead-h">預先規劃，按今日價格付款</h2>
     <div class="rule"></div>
-    <p class="lede plan-ahead-sub">請選擇會面日期。</p>
+    <p class="lede plan-ahead-sub">免費，無須承諾。可在禮堂或以電話會面。</p>
     <div class="plan-ahead-picker">
       <div class="plan-ahead-days" role="group" aria-label="選擇日期"></div>
       <div class="plan-ahead-times" role="group" aria-label="選擇時段">
@@ -64,9 +64,13 @@
         <button type="button" class="btn plan-choice" data-time="midday" data-time-label="中午" aria-pressed="false">中午</button>
         <button type="button" class="btn plan-choice" data-time="afternoon" data-time-label="下午" aria-pressed="false">下午</button>
       </div>
+      <div class="plan-ahead-places" role="group" aria-label="選擇會面地點">
+        <button type="button" class="btn plan-choice" data-place="chapel" data-place-label="在禮堂" aria-pressed="false">禮堂</button>
+        <button type="button" class="btn plan-choice" data-place="phone" data-place-label="以電話" aria-pressed="false">電話</button>
+      </div>
       <p class="plan-ahead-status" data-plan-status aria-live="polite"></p>
       <p class="plan-ahead-note">這是預約申請。我們會與您確認時間。</p>
-      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">申請此時段</span></a>
+      <a class="btn plan-ahead-confirm" href="#" aria-disabled="true" data-plan-confirm><span class="plan-ahead-confirm-label">預約免費規劃會面</span></a>
       <a class="btn plan-ahead-call" href="tel:+14156680077"><span class="plan-ahead-call-label">想致電嗎？ <span class="plan-ahead-phone">(415) 668-0077</span></span></a>
     </div>
     <div class="plan-ahead-fallback">
